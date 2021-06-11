@@ -27,7 +27,7 @@ In flow problems where the flow is modelled by for example the Darcy or the Stok
 \end{equation}
 where $$u$$ satisfied the Neumann boundary condition $$u\cdot n=g\in L^2(\Omega)$$.
 
-Thus it is of *paramount* importance that \eqref{eq:1} is satisfied, and we must therefore take extreme care in how we approximate $$g$$ when actually performing the computations. This is a fact which I have found is seldom emphasised.
+Thus it is of *paramount* importance that \ref{eq:1} is satisfied, and we must therefore take extreme care in how we approximate $$g$$ when actually performing the computations. This is a fact which I have found is seldom emphasised.
 
 If we know $$g$$ in closed form
 <sup>2</sup>
