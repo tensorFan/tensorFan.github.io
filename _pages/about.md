@@ -27,7 +27,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 # Welcome to Erik Nilsson's homepage!
 
-I am a PhD student in Numerical Analysis at KTH, Stockholm. My supervisor is [Sara Zahedi](https://www.kth.se/profile/sara7). On this site you can view my research and find other links.
+I am a PhD student in Numerical Analysis at [KTH](https://www.kth.se/profile/erikni6). My supervisor is [Sara Zahedi](https://www.kth.se/profile/sara7). On this site you can view my research and find other links.
 I will also make the occasional post about interesting mathematics.
 
 <!--
