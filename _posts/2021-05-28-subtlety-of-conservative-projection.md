@@ -13,7 +13,7 @@ Given a function $$f$$, a projection is a best approximation to $$f$$ from a sub
 (f,g)=(Pf,g)\ \forall g\in S.
 \end{equation}
 The projector $$P:L^2(\Omega)\to S$$ is linear as an operator. The projection then has the property of best approximation, namely
- \begin{equation}
+\begin{equation}
 ||f-Pf||\leq ||f-g||\ \forall g\in S.
 \end{equation}
 
@@ -23,11 +23,13 @@ In the following we let $$S$$ be some finite element subspace of finite dimensio
 In flow problems where the flow is modelled by for example the Darcy or the Stokes equations, one is also concerned with conservation of mass of the fluid. Conservation of mass simply means that in a closed system, the amount of fluid exiting the domain equals the amount coming in. This is a physical law, in contrast to the equations mentioned above which are just models in the end. Mathematically this law is written $$\nabla\cdot u=0$$, where $$u$$ is the velocity field. We have by integration by parts,
 \begin{equation} 
 \label{eq:1}
+
 0=(\nabla\cdot u,q) = (u\cdot n,q)_{\partial \Omega} - (u,\nabla q)=(g,q)_{\partial \Omega} - (u,\nabla q),
+
 \end{equation}
 where $$u$$ satisfied the Neumann boundary condition $$u\cdot n=g\in L^2(\Omega)$$.
 
-Thus it is of *paramount* importance that \ref{eq:1} is satisfied, and we must therefore take extreme care in how we approximate $$g$$ when actually performing the computations. This is a fact which I have found is seldom emphasised.
+Thus it is of *paramount* importance that \eqref{eq:1} is satisfied, and we must therefore take extreme care in how we approximate $$g$$ when actually performing the computations. This is a fact which I have found is seldom emphasised.
 
 If we know $$g$$ in closed form
 <sup>2</sup>
