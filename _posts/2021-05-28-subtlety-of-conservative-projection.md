@@ -3,17 +3,19 @@ layout: post
 title:  "Subtlety of projection in conservative FEM"
 date:   2021-05-28
 ---
-I was recently enlightened to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine\footnote{Potential mistakes herein are entirely my own.}.) Projections are ubiquitous in mathematics and they come in different guises. In this post I want to highlight a very important and subtle distinction between projections and interpolations in the FEM. I have the suspicion that this is one of those topics that is obvious to the initiated, but mysterious to the student (and sometimes even to the master of a very closely related field.) So it is of value to discuss these subtleties.
+I was recently enlightened to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine.)
+[^1]: Potential mistakes herein are entirely my own.
+Projections are ubiquitous in mathematics and they come in different guises. In this post I want to highlight a very important and subtle distinction between projections and interpolations in the FEM. I have the suspicion that this is one of those topics that is obvious to the initiated, but mysterious to the student (and sometimes even to the master of a very closely related field.) So it is of value to discuss these subtleties.
 
-\section{$L^2$ projections}
-Given a function $f$, a projection is a best approximation to $f$ from a subspace of the space wherein $f$ resides. The sense in which the projection is a best approximation is determined by the Hilbert space inner product one wants to use, this then gives that the functions are closest in the corresponding norm. The definition is simple; given some open set domain $\Omega$ and $f\in L^2(\Omega)$, then $Pf\in S\subset L^2(\Omega)$ is the unique function in $S$ for which
-\begin{align*}
+# $$L^2$$ projections
+Given a function $$f$$, a projection is a best approximation to $$f$$ from a subspace of the space wherein $$f$$ resides. The sense in which the projection is a best approximation is determined by the Hilbert space inner product one wants to use, this then gives that the functions are closest in the corresponding norm. The definition is simple; given some open set domain $$\Omega$$ and $$f\in L^2(\Omega)$$, then $$Pf\in S\subset L^2(\Omega)$$ is the unique function in $$S$$ for which
+\begin{equation*}
 (f,g)=(Pf,g)\ \forall g\in S.
-\end{align*}
-The projector $P:L^2(\Omega)\to S$ is linear as an operator. The projection then has the property of best approximation, namely
- \begin{align*}
+\end{equation*}
+The projector $$P:L^2(\Omega)\to S$$ is linear as an operator. The projection then has the property of best approximation, namely
+ \begin{equation*}
 ||f-Pf||\leq ||f-g||\ \forall g\in S.
-\end{align*}
+\end{equation*}
 
 In the following we let $S$ be some finite element subspace of finite dimension.
 
@@ -33,4 +35,4 @@ Short answer is no; not if the function you are testing against lies in both spa
 
 If $P$ is the projection to $\mathbf{P}^1$ instead, then $(Pf,g)$ is surprisingly enough \textit{not} equal to $(f,g)$. If however $P$ instead is the projection to $\mathbf{dP}^1$, the discontinuous linear polynomials on $\partial\Omega$, then $(Pf,g)=(f,g)$ since $g\in \mathbf{P}^0\subset \mathbf{dP}^1$.
 
-[Here][/projection.pdf] is the same post in pdf format.
+[Here][/assets/pdf/projection.pdf] is the same post in pdf format.
