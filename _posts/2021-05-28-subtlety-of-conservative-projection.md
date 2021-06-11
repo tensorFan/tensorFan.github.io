@@ -41,4 +41,5 @@ If $$P$$ is the projection to $$\mathbf{P}^1$$ instead, then $$(Pf,g)$$ is surpr
 [Here][/assets/pdf/projection.pdf] is the same post in pdf format.
 
 <sup>1</sup> Potential mistakes herein are entirely my own!
+
 <sup>2</sup> If we are sampling $$g$$ from some physical system then I do not think there is any issue, but I lack experience of this so if you know something about it please contact me.
