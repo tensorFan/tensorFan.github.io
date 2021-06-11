@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Here you can see my ongoing and previous research.
+description: Here you can see descriptions of my ongoing and previous research.
 nav: true
 #display_categories: [work, fun]
 horizontal: false
