@@ -38,7 +38,7 @@ Short answer is no; not if the function you are testing against lies in both spa
 
 If $$P$$ is the projection to $$\mathbf{P}^1$$ instead, then $$(Pf,g)$$ is surprisingly enough *not* equal to $$(f,g)$$. If however $$P$$ instead is the projection to $$\mathbf{dP}^1$$, the discontinuous linear polynomials on $$\partial\Omega$$, then $$(Pf,g)=(f,g)$$ since $$g\in \mathbf{P}^0\subset \mathbf{dP}^1$$.
 
-[Here][/assets/pdf/projection.pdf] is the same post in pdf format.
+[Here](/assets/pdf/projection.pdf) is the same post in pdf format.
 
 <sup>1</sup> Potential mistakes herein are entirely my own!
 
