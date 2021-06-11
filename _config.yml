@@ -68,7 +68,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: a postlist  # your blog must have a name for it to show up in the nav bar
+blog_name: thoughts about math  # your blog must have a name for it to show up in the nav bar
 blog_description: Here is an archive of my blog posts. So far, there is one post.
 permalink: /blog/:year/:title/
 
@@ -166,7 +166,7 @@ scholar:
 # Optional Features
 # -----------------------------------------------------------------------------
 
-enable_google_analytics:    true  # enables google analytics
+enable_google_analytics:    false  # enables google analytics
 enable_panelbear_analytics: false  # enables panelbear analytics
 enable_mansory:             true   # enables automatic project cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
