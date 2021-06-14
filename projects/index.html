@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Home | Home</title>
+<title>Home | projects</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -30,7 +30,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -94,7 +94,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -113,9 +113,11 @@
           
           
           
-          <li class="nav-item ">
+          <li class="nav-item active">
               <a class="nav-link" href="/projects/">
                 projects
+                
+                <span class="sr-only">(current)</span>
                 
               </a>
           </li>
@@ -160,24 +162,30 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1>thoughts about math</h1>
-    <h2></h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">projects</h1>
+    <p class="post-description">Here you can see descriptions of my ongoing and previous research.</p>
+  </header>
+
+  <article>
+    <ul>
+  <li>Conservative cut finite element methods</li>
+</ul>
+
+<p>Partial differential equations govern nature and so crop up all over the place, but they are notoriously hard to solve. Luckily it is possible to find approximate solutions through the help of computers which, in cases where we know the exact solution, can be shown to converge, i.e. get closer with respect to some refinement, to this exact solution. When the computational domain gets cut in two by some interface, perhaps modelling a fracture or a boundary separating two media, the problem becomes even harder to solve.</p>
+
+<p>We use so called cut finite element methods (cutFEM) to efficiently compute approximate (discrete) solutions to these problems. However, as is the case for many FEM applied to flow phenomena, we lose energy over the course of the simulation. The discrete scheme is not conservative. The aim is then to find a modification to the cutFEM framework which is conservative.</p>
+
+<ul>
+  <li>Can one hear the shape of a flat torus?</li>
+</ul>
+
+<p>Flat tori are particularly simple Riemannian manifolds for which it is in some dimensions possible to discern their isometry class (shape) from simply looking at the list of numbers we call the Laplace eigenvalue spectrum. In which dimensions can we do this? The answer is hidden deep within the corpus of pure mathematics research, and we seek to uncover it and present it in a new, more reader-friendly way.</p>
+
+<p>Since there is no hosting for the text elsewhere, see <a href="/assets/pdf/thesis.pdf">here</a> for an introduction.</p>
 
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/subtlety-of-conservative-projection/">Subtlety of projection in conservative FEM</a></h3>
-        <p class="post-meta">May 28, 2021</p>
-        <p></p>
-      </li>
-    
-  </ul>
-
-  
-
+  </article>
 
 </div>
 
