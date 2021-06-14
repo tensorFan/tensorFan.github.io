@@ -3,7 +3,7 @@ layout: post
 title:  "Subtlety of projection in conservative FEM"
 date:   2021-05-28
 ---
-I was recently enlightened to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine.)
+I was recently exposed to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine.)
 <sup>1</sup>
 Projections are ubiquitous in mathematics and they come in different guises. In this post I want to highlight a very important and subtle distinction between projections and interpolations in the FEM. I have the suspicion that this is one of those topics that is obvious to the initiated, but mysterious to the student. So it is of value to discuss these subtleties.
 
@@ -21,10 +21,10 @@ In the following we let $$S$$ be some finite element subspace of finite dimensio
 
 # Conservation of mass in finite elements
 In flow problems where the flow is modelled by for example the Darcy or the Stokes equations, one is also concerned with conservation of mass of the fluid. Conservation of mass simply means that in a closed system, the amount of fluid exiting the domain equals the amount coming in. This is a physical law, in contrast to the equations mentioned above which are just models in the end. Mathematically this law is written $$\nabla\cdot u=0$$, where $$u$$ is the velocity field. We have by integration by parts,
-\begin{equation} 
-0=(\nabla\cdot u,q) = (u\cdot n,q)_{\partial \Omega} - (u,\nabla q)=(g,q)_{\partial \Omega} - (u,\nabla q),
-\end{equation}
 
+$$
+0=(\nabla\cdot u,q) = (u\cdot n,q)_{\partial \Omega} - (u,\nabla q)=(g,q)_{\partial \Omega} - (u,\nabla q),
+$$
 where $$u$$ satisfied the Neumann boundary condition $$u\cdot n=g\in L^2(\Omega)$$.
 
 Thus it is of *paramount* importance that \eqref{eq:1} is satisfied, and we must therefore take extreme care in how we approximate $$g$$ when actually performing the computations. This is a fact which I have found is seldom emphasised.
