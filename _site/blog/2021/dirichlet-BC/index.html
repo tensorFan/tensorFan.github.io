@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Home | On how to handle Dirichlet boundary conditions in code</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<!-- <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" /> -->
+<link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
+
+<link rel="stylesheet" href="/website/assets/css/main.css">
+<link rel="canonical" href="/website/blog/2021/dirichlet-BC/">
+
+<!-- JQuery -->
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
+<!-- Theming-->
+
+<script src="/website/assets/js/theme.js"></script>
+<script src="/website/assets/js/dark_mode.js"></script>
+
+
+
+
+
+
+    
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="http://localhost:4000/website/">
+       Home
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/website/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/website/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/publications/">
+                papers
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/projects/">
+                research activities
+                
+              </a>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/teaching/">
+                teaching
+                
+              </a>
+          </li>
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">On how to handle Dirichlet boundary conditions in code</h1>
+    <p class="post-meta">November 12, 2021</p>
+  </header>
+
+  <article class="post-content">
+    <p>I will in this post attempt to summarise some different approaches to handling Dirichlet boundary conditions in implementations of FEM codes. We shall be concerned with the (weak) Poisson equation with inhomogeneous boundary condition,</p>
+
+<p>\begin{equation} -\nabla\cdot\nabla u = f \text{ in } \Omega,\ u = g \text{ on } \partial\Omega. \end{equation}</p>
+
+<p>Here \(f\in L^2(\Omega),g\in L^{\infty}(\partial\Omega)\) represent data which we use to solve for \(u\in H^1(\Omega)\). Since then the trace of \(u\) is equal to \(g\), we can say that \(g\in H^{1/2}(\partial\Omega)\). Recast in a variational form, one typically wants to find \(u\in H^1_g(\Omega)= \\\{ v\in H^1(\Omega) : v\lvert_{\partial\Omega} = g \\\}\) solving</p>
+
+<p>\begin{equation} \int_{\Omega} \nabla u \cdot \nabla v = \int_{\Omega} fv \ \ \forall v\in H^1_0(\Omega). \label{eq1}\end{equation}</p>
+
+<p>To put the condition \(u\lvert_{\partial\Omega} = g\) into the computer is the tricky part once we know how to discretise. This formulation is also difficult to analyse with respect to well-posedness<sup>1</sup>. Fortunately we may reduce to the homogeneous case in the following way. Set \(w=u-\hat{g}\), where \(\hat{g}\in H^1(\Omega)\) is the extension of \(g\) to the entire domain (this exists if our domain is Lipschitz). We shall call this extension simply \(g\) in the following. Then \(w\in H^1_0(\Omega)\) and the equation for \(w\) becomes homogeneous; its variational form nets us a unique solution. We may also find a unique extension of \(g\) by taking the extension with the smallest (infimum) \(H^1\) norm, thus getting a unique solution \(u\). The modified variational form for \(w\) becomes</p>
+
+<p>\begin{equation} \int_{\Omega} \nabla w \cdot \nabla v = \int_{\Omega} fv - \int_{\Omega} \nabla g \cdot \nabla v \ \ \forall v\in H^1_0(\Omega). \end{equation}</p>
+
+<p>From here it is still not entirely clear how we should discretise. The only unknown data lies in our function \(w\) so we should respect that when solving the discrete system. But what do we do about \(\nabla g\), in particular \(g\) could be sampled from some physical system so its gradient might not be something we can uniquely construct. We could try <a href="https://tensorfan.github.io/blog/2021/subtlety-of-conservative-projection/">projecting</a> it, but we can actually avoid the problem entirely.</p>
+
+<p>The natural choice of finite elements for the Poisson equation are the <a href="http://femwiki.wikidot.com/elements:lagrange-elements">Lagrange</a> \(\mathbf{P}^k\) elements whose dual space consists in part of nodal evaluations. A subspace will be the piecewise linears \(\mathbf{P}^1\) so consider the following. Set \(V_h\subset H^1(\Omega),\ V_{h,g}\subset H^1_g(\Omega)\) as finite<sup>2</sup> dimensional \(\mathbf{P}^k\) subspaces. Decompose the discrete solution \(u_h\in V_{h,g}\) as \(u_h=w_h+u_{h,g}\) where \(w_h \in V_{h,0}\) and \(u_{h,g}\in V_{h,g}\). Then we can pick \(u_{h,g}\) to be the function which is \(0\) on the interior of \(\Omega\), meaning that we can solve the discrete version of \eqref{eq1} for \(w_h\) as if our Dirichlet boundary condition was \(g=0\). The nodal values along the boundary \(x_i\) will be \(g(x_i)\) regarded as known quantities.</p>
+
+<p>We will now investigate different philosophies regarding the implementation of this in code. Let \(n=\text{dim}(V_{h,g})\). In all sections below we will consider the linear \(n\times n\) symmetric system arising from discretising \eqref{eq1}, \(Ax=b\) with our unknowns in \(x\).</p>
+
+<h1 id="note-201123-for-reasons-i-will-omit-the-non-recommended-approaches-for-now">Note 20/11/23: For reasons I will omit the non-recommended approaches for now.</h1>
+<!--
+# Awkward way 1: row deletion
+In each row $$j$$ of $$A$$ corresponding to a nodal boundary degree of freedom (dof) we set the value at each column except $$j$$ to 0, and we set column $$j$$ to 1. We change<sup>3</sup> the right hand side vector $$b_j=g(x_{j})$$. It works by putting the equation you want satisfied as a row in the linear system. However, this is awkward because such an incision in the matrix changes the way in which the condition number of the matrix scales. Perhaps more egregious is that you also destroy the symmetry of the system, making application of preconditioned conjugate gradient or other symmetric solvers impossible.
+
+# Awkward way 2: computer precision witchcraft aka penalty method
+As a solution to retaining the symmetry of the system, one could utilise the precision limits of modern computers by multiplying the value in column $$j$$ of $$A$$ and row $$j$$ of $$b$$ by a huge number, called the penalty, like $$10^{64}$$. The computer goes derp and only sees the effect of the boundary. It has been shown that in order for the solution to this perturbed problem to converge to the solution of the original problem in the limit as the penalty goes to infinity, it must depend on the mesh size. As we refine the mesh, the problem becomes increasingly [ill-conditioned](https://mooseframework.inl.gov/source/bcs/PenaltyDirichletBC.html). I would therefore not recommend this approach.-->
+
+<h1 id="nice-way-restriction-and-extension">Nice way: restriction and extension</h1>
+<p>Back to the drawing board then. As is the case in many situations of a mathematical nature, it helps to consider what is actually happening on a higher level of mathematical abstraction. When the solution is known on the boundary, what we are solving for is the restriction of the solution on the interior. When we then have the interior solution we want to extend back to the entire domain. Restriction and extension are in this context linear operators which can be represented by matrices (our spaces are finite-dimensional).</p>
+
+<p>Let \(n_I\) be the number of dof’s without the boundary nodes. Let \(R:\mathbb{R}^{n}\to \mathbb{R}^{n_I}\) be the restriction to the interior and let \(R_{\partial}:\mathbb{R}^{n}\to \mathbb{R}^{n-n_I}\) be the restriction to the boundary. Then if \(x_{\partial}\in\mathbb{R}^{n-n_I}\) is the dof vector of boundary evaluations,</p>
+
+<p>\begin{equation} RAR^Tx_I = R(b - A R_{\partial}^Tx_{\partial}) \label{eq:2}\end{equation}</p>
+
+<p>is solvable for the interior dof’s \(x_I\), after which we get the entire solution from \(R^T x_I + R_{\partial}^T x_{\partial}\).</p>
+
+<p>This procedure changes nothing about the system, it retains its scaling and is still symmetric. Basically \eqref{eq:2} is exactly the system we want to solve. Pretty nice I would say.</p>
+
+<hr />
+
+<p><sup>1</sup> Note that the space \(H^1_g(\Omega)\) is not a vector space!</p>
+
+<p><sup>2</sup> If \(g\) is outside the space, this space is defined with respect to subspace projection using the Hilbert inner product in \(H^1\).</p>
+
+<p><sup>3</sup> We have ordered the dof’s so that the node evaluations occur first.</p>
+
+  </article>
+
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2025 Erik A. Nilsson.
+    
+    
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/website/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/website/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/website/assets/js/common.js"></script>
+
+
+</html>
