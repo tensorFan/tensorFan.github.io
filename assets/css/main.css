@@ -290,6 +290,7 @@ footer.sticky-bottom {
 }
 .post-list li {
   border-bottom: 1px solid #e8e8e8;
+  width: 100%;
   list-style: none;
   padding-top: 2rem;
   padding-bottom: 2rem;
