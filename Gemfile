@@ -9,8 +9,6 @@ group :jekyll_plugins do
     gem 'jemoji'
     gem 'unicode_utils'
     gem 'webrick'
+    gem "jekyll-feed", "~> 0.17.0"
+    gem "jekyll-seo-tag", "~> 2.8"
 end
-
-gem "jekyll-feed", "~> 0.17.0"
-
-gem "jekyll-seo-tag", "~> 2.8"

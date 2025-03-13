@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/website/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/website/" rel="alternate" type="text/html" /><updated>2025-03-13T09:45:24+01:00</updated><id>http://localhost:4000/website/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Pullback connections and why isometries preserve geodesics</title><link href="http://localhost:4000/website/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/" rel="alternate" type="text/html" title="Pullback connections and why isometries preserve geodesics" /><published>2025-03-12T00:00:00+01:00</published><updated>2025-03-12T00:00:00+01:00</updated><id>http://localhost:4000/website/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics</id><content type="html" xml:base="http://localhost:4000/website/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/"><![CDATA[<p>Why do isometries preserve geodesics (locally minimizing paths)? 
+Under the isometry \(\phi:(M,g,\nabla)\to (\tilde M,\tilde g,\tilde \nabla)\), we have that \(\nabla=\phi^*\tilde\nabla\). In other words, the only Levi-Civita connection on \(M\) is the pullback connection. 
+How to prove this? The approach is to prove that the right hand side satisfies the properties of a connection on \(M\), which is torsion-free and compatible with the metric \(g\). Uniqueness of the connection on \(M\) satisfying these properties then gives \(\nabla=\phi^*\tilde\nabla\).
+These aspects can be shown entirely within the framework tensor fields, making the results automatically global. 
+Once we understand why \(\nabla=\phi^*\tilde\nabla\) we can answer our question.</p>
+
+<ul>
+  <li>First note that \(\phi^*\tilde\nabla\) is a map \(\Gamma(TM)\times\Gamma(TM)\to \Gamma(TM)\). Then we want to check linearity in the first entry and the characteristic Leibniz rule in the second.
+Recall that \(\phi_*(fX)=(f\circ\phi^{-1})\ \phi_*X\). Let for notation’s sake \(\psi:=\phi^{-1}:N\to M\), \(D:=\phi^*\tilde\nabla\) and the application of a derivation \(X\) on a function \(h\) be \(X.h=Xh\). Then for \(f\in C^{\infty}(M)\)</li>
+</ul>
+
+\[\begin{align} D_{fX}Y &amp;= \psi_*\tilde\nabla_{\phi_*(fX)}\phi_*Y = \psi_*\tilde\nabla_{f\circ\psi\ \phi_*X}\phi_*Y \\
+&amp;= \psi_*(f\circ\psi\ \tilde\nabla_{\phi_*X}\phi_*Y) = (f\circ\psi\circ\phi)\ \psi_*\tilde\nabla_{\phi_*X}\phi_*Y \\
+&amp;= fD_X Y 
+\end{align}\]
+
+<p>and recalling for \(g\in C^{\infty}(N)\), \((\phi_*X).g = (X.(f\circ\phi))\circ\psi\) as functions on \(N\),</p>
+
+\[\begin{align} 
+D_{X}(fY) &amp;= \psi_*\tilde\nabla_{\phi_*X}\phi_*(fY) = \psi_*\tilde\nabla_{\phi_*X}(f\circ\psi)\phi_*Y \\
+&amp;= \psi_*\left( (\phi_*X).(f\circ\psi)\phi_*Y + f\circ\psi\ \tilde\nabla_{\phi_*X}\phi_*Y \right) \\
+&amp;= \psi_*((X.(f\circ\psi\circ\phi))\circ\psi)\phi_*Y + f\psi_*\tilde\nabla_{\phi_*X}\phi_*Y \\
+&amp;= \psi_*(\underbrace{(X.f)\circ\psi)}_{\in C^{\infty}(N)}\phi_*Y + fD_{X}Y \\
+&amp;=(X.f) Y+ fD_{X}Y
+\end{align}\]
+
+<ul>
+  <li>Next we show that it is torsion free, using the fact that \([\phi_* X,\phi_* Y]=\phi_*[X,Y]\). We have from torsion-freeness of \(\tilde\nabla\) that \(\tilde\nabla_{\phi_* X}\phi_* Y - \tilde\nabla_{\phi_* Y}\phi_* X = [\phi_* X,\phi_* Y] = \phi_*[X,Y]\), whereby \(D_XY-D_YX = \psi_*\phi_*[X,Y]=[X,Y]\) since pushforwards are isomorphisms.</li>
+  <li>Lastly we use compatibility of \(\tilde \nabla\) with \(\tilde g\) to get it for \(D\) with \(g\). Recall \(g(X,Y)=g_{Id}(X,Y)=\tilde g_{\phi}(\phi_*X,\phi_*Y)\) since \(\phi:M\to N\) is an isometry. Let \(\Gamma(TM)\ni Z=\psi_*\xi\) for \(\xi\in\Gamma(TN)\). Then since the expressions need to be equal as functions on \(M\):
+\(\begin{align}
+g(D_XY,Z) &amp;= g(\psi_*\tilde\nabla_{\phi_*X}\phi_*Y,\psi_*\xi) = \tilde g_\phi(\tilde\nabla_{\phi_*X}\phi_*Y,\xi) = \tilde g_\phi(\tilde\nabla_{\phi_*X}\phi_*Y,\phi_* Z) \\
+&amp;= ((\phi_*X).\tilde g_{Id}(\phi_*Y,\phi_*Z))\circ\psi - \tilde g_\phi (\phi_*Y,\tilde\nabla_{\phi_*X}\phi_*Z) \\
+&amp;= X.\tilde g_\phi(\phi_* Y,\phi_* Z) - g(Y,\psi_*\tilde\nabla_{\phi_*X}\phi_*Z) \\
+&amp;= X.g(Y,Z) - g(Y,D_XZ).
+\end{align}\)</li>
+</ul>
+
+<p>Thus \(\nabla=\phi^*\tilde\nabla\). As a bonus we can nicely see from this that geodesics get mapped by an isometry \(\phi:M\to N\). If \(c:I\to M\) is a geodesic then the corresponding curve \(\gamma:=\phi\circ c:I\to N\) is as well. (This curve is the flow \(\tilde\theta_t(n)=\gamma(t)\) with \(\gamma(0)=n\) from the vector field \(\phi_*c'(t)\) with \(c(0)=\psi(n)\).) 
+\(\begin{equation} 
+\psi_*\tilde\nabla_{\gamma'}\gamma' = \psi_*\tilde\nabla_{\phi_*c'}\phi_*c' = D_{c'}c'=\nabla_{c'}c'=0 
+\end{equation}\)
+so \(\tilde\nabla_{\gamma'}\gamma'=0\) since \(\psi_*\) is an isomorphism. (Note \(\gamma'(t) = \frac{d}{dt}(\phi\circ c(t))=T_{c(t)}\phi c'(t)=(\phi_*c')(t)\) where \(T_{c(t)}\phi:T_{c(t)}M\to T_{\gamma(t)}N\) is the tangent map or differential.)</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Why do isometries preserve geodesics (locally minimizing paths)? Under the isometry \(\phi:(M,g,\nabla)\to (\tilde M,\tilde g,\tilde \nabla)\), we have that \(\nabla=\phi^*\tilde\nabla\). In other words, the only Levi-Civita connection on \(M\) is the pullback connection. How to prove this? The approach is to prove that the right hand side satisfies the properties of a connection on \(M\), which is torsion-free and compatible with the metric \(g\). Uniqueness of the connection on \(M\) satisfying these properties then gives \(\nabla=\phi^*\tilde\nabla\). These aspects can be shown entirely within the framework tensor fields, making the results automatically global. Once we understand why \(\nabla=\phi^*\tilde\nabla\) we can answer our question.]]></summary></entry><entry><title type="html">A not so quick note on implementing face degrees of freedom, and degrees of freedom in general</title><link href="http://localhost:4000/website/blog/2022/a-quick-note-on-face-dofs/" rel="alternate" type="text/html" title="A not so quick note on implementing face degrees of freedom, and degrees of freedom in general" /><published>2022-08-22T00:00:00+02:00</published><updated>2022-08-22T00:00:00+02:00</updated><id>http://localhost:4000/website/blog/2022/a-quick-note-on-face-dofs</id><content type="html" xml:base="http://localhost:4000/website/blog/2022/a-quick-note-on-face-dofs/"><![CDATA[<p>Coming from an introductory course on FEM, a student may not (depending on the course) have encountered any finite element outside of the Lagrange family. This kind of element has a corresponding set of degrees of freedom (DOFs) being the nodal evaluations of a function (or for higher order also the nodal values of the derivatives of said function.) Recall that the basis functions \(\{\varphi_i\}_{i=1}^n\) are those functions which evaluate to the kronecker delta on the DOFs,
+\begin{equation} dof_j(\varphi_i) = \delta_{ij}. \end{equation}
+Here \(n\) is the dimension of the finite dimensional space in which we search for a discrete solution to some variational problem. In the case of the Lagrange family of order 1, the basis functions of an element are its barycentric coordinates.</p>
+
+<p>Note here that the DOFs can be almost any type of functional, they are not restricted to being just nodal evaluations. Then the basis functions will change accordingly, and so will the space that they span. In fact, this is a general definition of a finite element which I am quite fond of. There are exceptions but it covers most if not all finite elements one can encounter. I like the following (slightly simplified) version from Ciarlet’s book <a href="https://books.google.se/books/about/The_Finite_Element_Method_for_Elliptic_P.html?id=1PF-WS0Nl9IC&amp;source=kp_book_description&amp;redir_esc=y">“The Finite Element Method for Elliptic Problems”</a></p>
+
+<p>A finite element is a triple \((K,P,\Sigma)\) where \(K\) is a subset of \(\mathbb{R}^n\), \(P\) is some set of \(\mathbb{R}^k\)-valued functions (\(k\leq n\)) on \(K\), and \(\Sigma\) is a finite set of linearly independent linear forms \(\phi_i, 1\leq i\leq N\) acting on \(P\). Furthermore we assume that there exists functions \(\varphi_j\) in \(P\) for which \(\phi_i(\varphi_j)=\delta_{ij}\). In other words we assume that \(P=\Sigma'\) the linear dual space of \(\Sigma\). This last property is also called \(P-\)unisolvency in the FEM literature. What’s so nice about this definition is that if you have \(K\) in the back of your mind as a triangle or quadrilateral, the element is entirely determined by how you choose \(\Sigma\).</p>
+
+<p>Okay, this was a tangent but now the reader knows that there are more elements out there than just the Lagrange element. See <a href="https://www-users.cse.umn.edu/~arnold/femtable/">this link</a> for a cute table. The Lagrange element of order \(k\) on geometry \(K\) is usually denoted \(P_k(K)\). In every case I have seen, the DOFs in \(\Sigma\) are inherently tied to the geometry of the element \(K\), which is interesting in and of itself.. but another example is given by the Raviart-Thomas family. This will lead us to what I really wanted to discuss here. I guess at this point I should change the title of this post..</p>
+
+<p>The degrees of freedom of the lowest order member of the Raviart-Thomas family (RT family for short) are associated to the faces \(F\) of \(K\) and are given by 
+\begin{equation} dof_F(\pmb{\varphi}) = \int_F \pmb{\varphi}\cdot \pmb{n}. \end{equation}
+We see directly that \(k=2\) here. In words, we just integrate the normal component of our vector-valued input on the face \(F\). The RT element is very useful for certain applications in which the divergence is involved as a differential operator (can you figure out why? Hint: multivariate integration by parts!)</p>
+
+<p>Let’s go to higher order. The RT element of order 1, \(RT_1\), is defined by the following DOFs
+\begin{equation}\label{eq:1}
+dof_{F,\psi}(\pmb{\varphi})=\int_F \pmb{\varphi}\cdot\pmb{n} \psi, \ \forall \psi\in P_1(F)
+\end{equation}
+\begin{equation}\label{eq:2}
+dof_{\pmb{p}}(\pmb{\varphi})=\int_K \pmb{\varphi}\cdot \pmb{p}, \ \forall \pmb{p}\in P_0(K)
+\end{equation}</p>
+
+<p>A good warmup is to consider \eqref{eq:2}. It is integrating \(\pmb{\varphi}\) against every vector-valued constant function, and there are only two (one for each component) up to linear independence. Thus we see that \eqref{eq:2} is equivalent to two DOFs, each integrating a component of \(\pmb{\varphi}\) over \(K\). Looking now at \eqref{eq:1}, we see that there are several DOFs per face, the amount of which is equal to the dimension of \(P_1(F)\). Since \(F\) is a piece of the geometry of 1 dimension, the barycentric coordinates are at most 2, one for each node. But in fact \(P_k(K)\) is exactly the whole space of polynomials of degree less than or equal to \(k\) on \(K\), so any basis we can think of will work to span \(P_1(F)\). Thus we have ambiguity when it comes to implementation!</p>
+
+<p>The basis we choose matters because the corresponding basis functions of \(RT_1\) must change according to our choice, and they might even scale differently! It might have other consequences too. We can choose the naive basis \(\{1,x\}\) on our faces, in which case the subset of basis functions corresponding to the DOFs with \(\psi=1\) will be precisely the \(RT_0\) basis functions. This can be useful if you are for some reason wanting to use these basis functions / DOFs for a special purpose in your code. If your basis is something else, you can still construct them of course, but it might take a lot of work. <a href="https://defelement.com/elements/raviart-thomas.html">Here</a> is a wonderful site where you can view a database of different finite elements.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Coming from an introductory course on FEM, a student may not (depending on the course) have encountered any finite element outside of the Lagrange family. This kind of element has a corresponding set of degrees of freedom (DOFs) being the nodal evaluations of a function (or for higher order also the nodal values of the derivatives of said function.) Recall that the basis functions \(\{\varphi_i\}_{i=1}^n\) are those functions which evaluate to the kronecker delta on the DOFs, \begin{equation} dof_j(\varphi_i) = \delta_{ij}. \end{equation} Here \(n\) is the dimension of the finite dimensional space in which we search for a discrete solution to some variational problem. In the case of the Lagrange family of order 1, the basis functions of an element are its barycentric coordinates.]]></summary></entry><entry><title type="html">On how to handle Dirichlet boundary conditions in code</title><link href="http://localhost:4000/website/blog/2021/dirichlet-BC/" rel="alternate" type="text/html" title="On how to handle Dirichlet boundary conditions in code" /><published>2021-11-12T00:00:00+01:00</published><updated>2021-11-12T00:00:00+01:00</updated><id>http://localhost:4000/website/blog/2021/dirichlet-BC</id><content type="html" xml:base="http://localhost:4000/website/blog/2021/dirichlet-BC/"><![CDATA[<p>I will in this post attempt to summarise some different approaches to handling Dirichlet boundary conditions in implementations of FEM codes. We shall be concerned with the (weak) Poisson equation with inhomogeneous boundary condition,</p>
+
+<p>\begin{equation} -\nabla\cdot\nabla u = f \text{ in } \Omega,\ u = g \text{ on } \partial\Omega. \end{equation}</p>
+
+<p>Here \(f\in L^2(\Omega),g\in L^{\infty}(\partial\Omega)\) represent data which we use to solve for \(u\in H^1(\Omega)\). Since then the trace of \(u\) is equal to \(g\), we can say that \(g\in H^{1/2}(\partial\Omega)\). Recast in a variational form, one typically wants to find \(u\in H^1_g(\Omega)= \\\{ v\in H^1(\Omega) : v\lvert_{\partial\Omega} = g \\\}\) solving</p>
+
+<p>\begin{equation} \int_{\Omega} \nabla u \cdot \nabla v = \int_{\Omega} fv \ \ \forall v\in H^1_0(\Omega). \label{eq1}\end{equation}</p>
+
+<p>To put the condition \(u\lvert_{\partial\Omega} = g\) into the computer is the tricky part once we know how to discretise. This formulation is also difficult to analyse with respect to well-posedness<sup>1</sup>. Fortunately we may reduce to the homogeneous case in the following way. Set \(w=u-\hat{g}\), where \(\hat{g}\in H^1(\Omega)\) is the extension of \(g\) to the entire domain (this exists if our domain is Lipschitz). We shall call this extension simply \(g\) in the following. Then \(w\in H^1_0(\Omega)\) and the equation for \(w\) becomes homogeneous; its variational form nets us a unique solution. We may also find a unique extension of \(g\) by taking the extension with the smallest (infimum) \(H^1\) norm, thus getting a unique solution \(u\). The modified variational form for \(w\) becomes</p>
+
+<p>\begin{equation} \int_{\Omega} \nabla w \cdot \nabla v = \int_{\Omega} fv - \int_{\Omega} \nabla g \cdot \nabla v \ \ \forall v\in H^1_0(\Omega). \end{equation}</p>
+
+<p>From here it is still not entirely clear how we should discretise. The only unknown data lies in our function \(w\) so we should respect that when solving the discrete system. But what do we do about \(\nabla g\), in particular \(g\) could be sampled from some physical system so its gradient might not be something we can uniquely construct. We could try <a href="https://tensorfan.github.io/blog/2021/subtlety-of-conservative-projection/">projecting</a> it, but we can actually avoid the problem entirely.</p>
+
+<p>The natural choice of finite elements for the Poisson equation are the <a href="http://femwiki.wikidot.com/elements:lagrange-elements">Lagrange</a> \(\mathbf{P}^k\) elements whose dual space consists in part of nodal evaluations. A subspace will be the piecewise linears \(\mathbf{P}^1\) so consider the following. Set \(V_h\subset H^1(\Omega),\ V_{h,g}\subset H^1_g(\Omega)\) as finite<sup>2</sup> dimensional \(\mathbf{P}^k\) subspaces. Decompose the discrete solution \(u_h\in V_{h,g}\) as \(u_h=w_h+u_{h,g}\) where \(w_h \in V_{h,0}\) and \(u_{h,g}\in V_{h,g}\). Then we can pick \(u_{h,g}\) to be the function which is \(0\) on the interior of \(\Omega\), meaning that we can solve the discrete version of \eqref{eq1} for \(w_h\) as if our Dirichlet boundary condition was \(g=0\). The nodal values along the boundary \(x_i\) will be \(g(x_i)\) regarded as known quantities.</p>
+
+<p>We will now investigate different philosophies regarding the implementation of this in code. Let \(n=\text{dim}(V_{h,g})\). In all sections below we will consider the linear \(n\times n\) symmetric system arising from discretising \eqref{eq1}, \(Ax=b\) with our unknowns in \(x\).</p>
+
+<h1 id="note-201123-for-reasons-i-will-omit-the-non-recommended-approaches-for-now">Note 20/11/23: For reasons I will omit the non-recommended approaches for now.</h1>
+<!--
+# Awkward way 1: row deletion
+In each row $$j$$ of $$A$$ corresponding to a nodal boundary degree of freedom (dof) we set the value at each column except $$j$$ to 0, and we set column $$j$$ to 1. We change<sup>3</sup> the right hand side vector $$b_j=g(x_{j})$$. It works by putting the equation you want satisfied as a row in the linear system. However, this is awkward because such an incision in the matrix changes the way in which the condition number of the matrix scales. Perhaps more egregious is that you also destroy the symmetry of the system, making application of preconditioned conjugate gradient or other symmetric solvers impossible.
+
+# Awkward way 2: computer precision witchcraft aka penalty method
+As a solution to retaining the symmetry of the system, one could utilise the precision limits of modern computers by multiplying the value in column $$j$$ of $$A$$ and row $$j$$ of $$b$$ by a huge number, called the penalty, like $$10^{64}$$. The computer goes derp and only sees the effect of the boundary. It has been shown that in order for the solution to this perturbed problem to converge to the solution of the original problem in the limit as the penalty goes to infinity, it must depend on the mesh size. As we refine the mesh, the problem becomes increasingly [ill-conditioned](https://mooseframework.inl.gov/source/bcs/PenaltyDirichletBC.html). I would therefore not recommend this approach.-->
+
+<h1 id="nice-way-restriction-and-extension">Nice way: restriction and extension</h1>
+<p>Back to the drawing board then. As is the case in many situations of a mathematical nature, it helps to consider what is actually happening on a higher level of mathematical abstraction. When the solution is known on the boundary, what we are solving for is the restriction of the solution on the interior. When we then have the interior solution we want to extend back to the entire domain. Restriction and extension are in this context linear operators which can be represented by matrices (our spaces are finite-dimensional).</p>
+
+<p>Let \(n_I\) be the number of dof’s without the boundary nodes. Let \(R:\mathbb{R}^{n}\to \mathbb{R}^{n_I}\) be the restriction to the interior and let \(R_{\partial}:\mathbb{R}^{n}\to \mathbb{R}^{n-n_I}\) be the restriction to the boundary. Then if \(x_{\partial}\in\mathbb{R}^{n-n_I}\) is the dof vector of boundary evaluations,</p>
+
+<p>\begin{equation} RAR^Tx_I = R(b - A R_{\partial}^Tx_{\partial}) \label{eq:2}\end{equation}</p>
+
+<p>is solvable for the interior dof’s \(x_I\), after which we get the entire solution from \(R^T x_I + R_{\partial}^T x_{\partial}\).</p>
+
+<p>This procedure changes nothing about the system, it retains its scaling and is still symmetric. Basically \eqref{eq:2} is exactly the system we want to solve. Pretty nice I would say.</p>
+
+<hr />
+
+<p><sup>1</sup> Note that the space \(H^1_g(\Omega)\) is not a vector space!</p>
+
+<p><sup>2</sup> If \(g\) is outside the space, this space is defined with respect to subspace projection using the Hilbert inner product in \(H^1\).</p>
+
+<p><sup>3</sup> We have ordered the dof’s so that the node evaluations occur first.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I will in this post attempt to summarise some different approaches to handling Dirichlet boundary conditions in implementations of FEM codes. We shall be concerned with the (weak) Poisson equation with inhomogeneous boundary condition,]]></summary></entry><entry><title type="html">Subtlety of projection in conservative FEM</title><link href="http://localhost:4000/website/blog/2021/subtlety-of-conservative-projection/" rel="alternate" type="text/html" title="Subtlety of projection in conservative FEM" /><published>2021-05-28T00:00:00+02:00</published><updated>2021-05-28T00:00:00+02:00</updated><id>http://localhost:4000/website/blog/2021/subtlety-of-conservative-projection</id><content type="html" xml:base="http://localhost:4000/website/blog/2021/subtlety-of-conservative-projection/"><![CDATA[<p>I was recently exposed to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine.)
+<sup>1</sup>
+Projections are ubiquitous in mathematics and they come in different guises. In this post I want to highlight a very important and subtle distinction between projections and interpolations in the FEM. I have the suspicion that this is one of those topics that is obvious to the initiated, but mysterious to the student. So it is of value to discuss these subtleties.</p>
+
+<p>In the following we let \(S\) be some finite element subspace of finite dimension.</p>
+
+<h1 id="l2-projections">\(L^2\) projections</h1>
+<p>Given a function \(f\), a projection is a best approximation to \(f\) from a subspace of the space wherein \(f\) resides. The sense in which the projection is a best approximation is determined by the Hilbert space inner product one wants to use, this then gives that the functions are closest in the corresponding norm. The definition is simple; given some open set domain \(\Omega\) and \(f\in L^2(\Omega)\), then \(Pf\in S\subset L^2(\Omega)\) is the unique function in \(S\) for which
+\begin{equation}
+(f,g)=(Pf,g)\ \forall g\in S.
+\end{equation}
+The projector \(P:L^2(\Omega)\to S\) is linear as an operator. The projection then has the property of best approximation, namely
+\begin{equation}
+||f-Pf||\leq ||f-g||\ \forall g\in S.
+\end{equation}</p>
+
+<h1 id="conservation-of-mass-in-finite-elements">Conservation of mass in finite elements</h1>
+<p>In flow problems where the flow is modelled by for example the Darcy or the Stokes equations, one is also concerned with conservation of mass of the fluid. Conservation of mass simply means that in a closed system, the amount of fluid exiting the domain equals the amount coming in. This is a physical law, in contrast to the equations mentioned above which are just models in the end. Mathematically this law is written \(\nabla\cdot u=0\), where \(u\) is the velocity field. We have by integration by parts that \(0=(\nabla\cdot u,q) = (u\cdot n,q)_{\partial \Omega} - (u,\nabla q) = (g,q)_{\partial \Omega} - (u,\nabla q)\), where \(u\) satisfied the Neumann boundary condition \(u\cdot n=g\in L^2(\Omega)\).</p>
+
+<p>Thus it is of <em>paramount</em> importance that the equation above is satisfied, and we must therefore take extreme care in how we approximate \(g\) when actually performing the computations. This is a fact which I have found is seldom emphasised.</p>
+
+<p>If we know \(g\) in closed form
+<sup>2</sup>
+then we must either evaluate \(g\) directly in the quadrature points of the integration, or we must project \(g\) to \(\partial \Omega\). If we simply interpolate \(g\), as is often convenient to do in a FEM code, then we will destroy mass conservation!</p>
+
+<h1 id="extra-should-it-matter-to-which-polynomial-space-i-project">Extra: should it matter to which polynomial space I project?</h1>
+<p>Short answer is no; not if the function you are testing against lies in both spaces. As an example, let \(g\in \mathbf{P}^0:=\mathbf{P}^0_{\partial\Omega}\), the piecewise constants on edges of \(\partial\Omega\). Then by definition \((f,g)=(Pf,g)\) if \(g\in \text{im}(P)\), i.e. if the image \(\text{im}(P)\supset\mathbf{P}^0\). So naturally if \(P\) is the projection onto constants on \(\partial\Omega\), the integral \((f,g)\) is preserved.</p>
+
+<p>If \(P\) is the projection to \(\mathbf{P}^1\) instead, then \((Pf,g)\) is surprisingly enough <em>not</em> equal to \((f,g)\). If however \(P\) instead is the projection to \(\mathbf{dP}^1\), the discontinuous linear polynomials on \(\partial\Omega\), then \((Pf,g)=(f,g)\) since \(g\in \mathbf{P}^0\subset \mathbf{dP}^1\).</p>
+
+<hr />
+
+<p><a href="/assets/pdf/projection.pdf">Here</a> is the same post in pdf format.</p>
+
+<hr />
+
+<p><sup>1</sup> Potential mistakes herein are entirely my own!</p>
+
+<p><sup>2</sup> If we are sampling \(g\) from some physical system then I do not think there is any issue, but I lack experience of this so if you know something about it please contact me.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[I was recently exposed to the subtlety of projection by my friend Wietse (who has agreed to being associated to this first blog post of mine.) 1 Projections are ubiquitous in mathematics and they come in different guises. In this post I want to highlight a very important and subtle distinction between projections and interpolations in the FEM. I have the suspicion that this is one of those topics that is obvious to the initiated, but mysterious to the student. So it is of value to discuss these subtleties.]]></summary></entry></feed>
