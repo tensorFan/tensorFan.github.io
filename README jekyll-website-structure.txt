@@ -53,20 +53,21 @@ bundle add jekyll,
 
 ## Steps to deploy website update
 0. Make changes to folder /tensorFan.github.io, for example create a new post in /_posts/
-1. In terminal on the main branch, run script ./deploy_website.sh
-This will do the following:
-# Build the site with Jekyll
-bundle exec jekyll build
-# Copy the contents of the _site directory to the gh-pages branch
-cp -r _site/* ../gh-pages/
-# Navigate to the gh-pages branch directory
-cd ../gh-pages
-# Add all the changes (new or modified files)
-git add .
-# Commit the changes with a message
-git commit -m "Update GitHub Pages"
-# Push the changes to the gh-pages branch
-git push origin gh-pages
+1. In terminal on the main branch, run script 
+    ./deploy_website.sh
+        (This will do the following:
+        # Build the site with Jekyll
+        bundle exec jekyll build)
+2. Copy the contents of the _site directory to the gh-pages branch
+    cp -r _site/* ../gh-pages/
+3. Navigate to the gh-pages branch directory
+    cd ../gh-pages
+4. Add all the changes (new or modified files)
+    git add .
+5. Commit the changes with a message
+    git commit -m "Update GitHub Pages"
+6. Push the changes to the gh-pages branch
+    git push origin gh-pages
 
 It works since I am using a "git workflow" allowing me to avoid switching branch to gh-pages, and pushing to that remote from main. 
 Note that the main branch does not need to get pushed.
