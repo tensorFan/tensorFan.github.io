@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-04-29T21:36:10+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-04-29T21:38:17+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">On shape regularity of triangular meshes</title><link href="https://tensorfan.github.io/blog/2025/shape-regularity/" rel="alternate" type="text/html" title="On shape regularity of triangular meshes" /><published>2025-04-29T00:00:00+02:00</published><updated>2025-04-29T00:00:00+02:00</updated><id>https://tensorfan.github.io/blog/2025/shape-regularity</id><content type="html" xml:base="https://tensorfan.github.io/blog/2025/shape-regularity/"><![CDATA[<p>Here follows a nice interpretation of shape regularity for two dimensional triangular meshes. It comes from the formula</p>
 
 \[\frac{h}{\rho} \geq \frac{2}{\sin \theta}\]
@@ -30,15 +30,10 @@
 
 \[s:=\frac{a + b + c}{2}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>Then the first area formula is $$ \rho s =</td>
-      <td>T</td>
-      <td>$$. Thus</td>
-    </tr>
-  </tbody>
-</table>
+<p>Then the first area formula is 
+\(\rho s = |T|\)</p>
+
+<p>Thus</p>
 
 \[\rho s \leq \frac{1}{2} h^2 \sin \theta
 \implies
