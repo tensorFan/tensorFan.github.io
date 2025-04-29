@@ -55,9 +55,10 @@ bundle add jekyll,
 0. Make changes to folder /tensorFan.github.io, for example create a new post in /_posts/
 1. In terminal on the main branch, run script 
     ./deploy_website.sh
-        (This will do the following:
-        # Build the site with Jekyll
-        bundle exec jekyll build)
+
+# This will do the following:
+1. Build the site with Jekyll
+    bundle exec jekyll build
 2. Copy the contents of the _site directory to the gh-pages branch
     cp -r _site/* ../gh-pages/
 3. Navigate to the gh-pages branch directory
@@ -72,3 +73,5 @@ bundle add jekyll,
 It works since I am using a "git workflow" allowing me to avoid switching branch to gh-pages, and pushing to that remote from main. 
 Note that the main branch does not need to get pushed.
 The website is deployed from the gh-pages branch.
+
+## IGNORE the VSCode git implementation for this project. Especially the main branch does not need to be updated.

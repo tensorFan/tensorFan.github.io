@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Home | Home</title>
+<title>Home | On shape regularity of triangular meshes</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/blog/2025/shape-regularity/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -116,8 +116,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/publications/">
                 papers
@@ -163,56 +161,61 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>.</h1>
-    <h2></h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">On shape regularity of triangular meshes</h1>
+    <p class="post-meta">April 29, 2025</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2025/shape-regularity/">On shape regularity of triangular meshes</a></h3>
-        <p class="post-meta">April 29, 2025</p>
-        <p></p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/">Pullback connections and why isometries preserve geodesics</a></h3>
-        <p class="post-meta">March 12, 2025</p>
-        <p></p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2022/a-quick-note-on-face-dofs/">A not so quick note on implementing face degrees of freedom, and degrees of freedom in general</a></h3>
-        <p class="post-meta">August 22, 2022</p>
-        <p></p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <p>Here follows a nice interpretation of shape regularity for two dimensional triangular meshes. It comes from the formula
+\(\frac{h}{\rho} \geq \frac{2}{\sin \theta}\)
+where $h$ is the diameter of an arbitrary triangle $T$ of the mesh, $\rho$ is the radius of the inscribed circle (the “incircle”), and $\theta$ is a vertex angle of $T$. In the picture below it is the angle at A.</p>
+
+<p><img src="https://media.opencurriculum.org/articles_manual/michael_corral_trigonometry/circumscribed-and-inscribed-circles/13.png" alt="enter image description here" /></p>
+
+<p>Let us now derive this formula and then see how it connects with shape regularity of a mesh.</p>
+
+<h3 id="two-formulas-for-the-area">Two formulas for the area</h3>
+<p>By drawing lines from the center of the incircle to the vertices of the triangle, we can see that the area of the triangle can be expressed as the sum of the areas of three smaller triangles:</p>
+
+\[A = \rho \, \frac{a + b + c}{2}\]
+
+<p>Let the side opposite to $\theta$ be $a$, and let $b$ and $c$ be the other two sides. The area can then also be written as:</p>
+
+<p>\(A = \frac{1}{2} b c \sin \theta\)
+since $b\sin \theta$ is the height of the triangle with respect to the base $c$.</p>
+
+<h3 id="deriving-the-formula">Deriving the formula</h3>
+
+<p>For triangles, the diameter $h$ coincides with the longest edge of the triangle, say $a=h$. Then $b \leq h$ and $c \leq h$, so
+\(A \leq \frac{1}{2} h^2 \sin \theta\)</p>
+
+<p>Set 
+\(s:=\frac{a + b + c}{2}\)</p>
+
+<p>Then the first area formula is: $\rho s = A$. Thus
+\(\rho s \leq \frac{1}{2} h^2 \sin \theta
+\implies
+\frac{\rho}{h} \leq \frac{h \sin \theta}{2s}
+\implies
+\frac{h}{\rho} \geq \frac{2s}{h \sin \theta}\)
+Since $2s = a+b+c = h+b+c \geq 2h$ by the triangle inequality, we finally have
+\(\frac{h}{\rho} \geq \frac{2}{\sin \theta}\)
+\(\tag*{$\square$}\)</p>
+
+<h3 id="connection-with-shape-regularity">Connection with shape regularity</h3>
+
+<p>Shape regularity for a mesh states that there is a global constant $c&gt;0$ such that for all triangles,
+\(\frac{h}{\rho}\leq c\)
+By our inequality above this sets a bound on the reciprocal of $\sin\theta$, meaning that each angle $\theta$ cannot be too small, less $\sin^{-1}\theta$ will break the bound. In other words, the condition of mesh regularity rules out degenerate triangles with really small angles.</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="Home">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="Home - page 2">2</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
