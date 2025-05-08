@@ -184,7 +184,7 @@
   <article class="post-content">
     <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
 \(R(X,Y)Z := D_XD_YZ-D_YD_XZ-D_{[X,Y]}Z\)
-for vector fields $X,Y,Z : M\to TM$. We start by going over some preliminaries.</p>
+for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$. We start by going over some preliminaries.</p>
 
 <h2 id="technical-preliminaries">Technical preliminaries</h2>
 
@@ -194,14 +194,18 @@ for vector fields $X,Y,Z : M\to TM$. We start by going over some preliminaries.<
 T := \partial_t \Gamma,\ S := \partial_s \Gamma,\ V := S|_{s=0}.\]
 
 <p>Here $V:[a,b]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
-This implies 
-\([S,T]=[T_{(s,t)}\Gamma \partial_t,T_{(s,t)}\Gamma \partial_s]=T_{(s,t)}\Gamma [\partial_s,\partial_t]=0.\)
-In turn,
-\(\begin{align*}
+This implies</p>
+
+\[[S,T]=[T_{(s,t)}\Gamma \partial_t,T_{(s,t)}\Gamma \partial_s]=T_{(s,t)}\Gamma [\partial_s,\partial_t]=0.\]
+
+<p>In turn,</p>
+
+\[\begin{align*}
 R(S,T)V &amp;= D_SD_TV-D_TD_SV-D_{[S,T]}V \\
 &amp;= \frac{D}{ds}\frac{D}{dt}V - \frac{D}{dt}\frac{D}{ds}V
-\end{align*}.\)
-Lastly, one can check that $\frac{D}{dt}S = \frac{D}{ds}T$. This is called the symmetry lemma.</p>
+\end{align*}.\]
+
+<p>Lastly, one can check that $\frac{D}{dt}S = \frac{D}{ds}T$. This is called the symmetry lemma.</p>
 
 <!-- [*Diagram showing main curves with x and y axes, with points marked*] -->
 
