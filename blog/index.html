@@ -50,9 +50,18 @@
 
     
 <!-- MathJax -->
+<!-- <script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script> -->
 <script type="text/javascript">
   window.MathJax = {
     tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
       tags: 'ams'
     }
   };
