@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Home | Home - page 2</title>
+<title>Home | Jacobi Fields</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -31,7 +31,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/blog/page/2/">
+<link rel="canonical" href="/blog/2025/jacobi-fields/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -116,8 +116,6 @@
           
           
           
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/publications/">
                 papers
@@ -163,56 +161,168 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
 
-  <div class="header-bar">
-    <h1>.</h1>
-    <h2></h2>
-  </div>
+<div class="post">
 
+  <header class="post-header">
+    <h1 class="post-title">Jacobi Fields</h1>
+    <p class="post-meta">May 8, 2025</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2022/a-quick-note-on-face-dofs/">A not so quick note on implementing face degrees of freedom, and degrees of freedom in general</a></h3>
-        <p class="post-meta">August 22, 2022</p>
-        <p></p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/dirichlet-BC/">On how to handle Dirichlet boundary conditions in code</a></h3>
-        <p class="post-meta">November 12, 2021</p>
-        <p></p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2021/subtlety-of-conservative-projection/">Subtlety of projection in conservative FEM</a></h3>
-        <p class="post-meta">May 28, 2021</p>
-        <p></p>
-      </li>
-    
-  </ul>
+  <article class="post-content">
+    <h2 id="jacobi-fields">Jacobi Fields</h2>
+
+<p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $\nabla$.</p>
+
+<h3 id="jacobi-fields-1">Jacobi Fields</h3>
+
+<p>Recall smooth variation $\Gamma: (-\varepsilon, \varepsilon) \times [a, b] \to M$ of smooth $\gamma: [a, b] \to M$. Denote $\Gamma_s (t) := \Gamma(s, t)$, $\Gamma^t (s) := \Gamma(s, t)$</p>
+
+<p>$T := \partial_t \Gamma$, $S := \partial_s \Gamma$, $V := S|_{s=0}$.
+$\quad$ [<em>C smooth variation field</em>]</p>
+
+<p>[<em>Diagram showing main curves with x and y axes, with points marked</em>]</p>
+
+<p>Let all $\Gamma_s$ be geodesics, by</p>
+
+<p>i) symmetry lemma $\frac{D}{dt}S = \frac{D}{ds}T$</p>
+
+<p>ii) compatibility with metric &amp; $[\partial_s, \partial_t] = 0$ &amp; $\frac{D}{dt} = \Gamma^<em>\nabla_{\dot{\gamma}}$, $\frac{D}{ds} = \Gamma^</em>\nabla_s$</p>
+
+<p>$\Rightarrow \frac{D}{dt}\frac{D}{dt}S = \frac{D}{dt}\frac{D}{ds}T = \frac{D}{ds}\frac{D}{dt}T + R(T, S)T$</p>
+
+<p>$\Rightarrow V’’ + R(V, \dot{\gamma})\dot{\gamma} = 0 \quad$ [<em>Jacobi equation</em>]</p>
+
+<p>Note that the second proper variation of energy is:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\left.\frac{d^2}{ds^2}E(\Gamma_s)\right</td>
+      <td>_{s=0} = -\int_a^b \langle V, V’’ + R(V, \dot{\gamma})\dot{\gamma} \rangle dt$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>and the symmetric bilinear form</p>
+
+<p>$I(V, W) := -\int_a^b \langle V, W’’ + R(W, \dot{\gamma})\dot{\gamma} \rangle dt \quad$ [<em>index form</em>]</p>
+
+<p>is degenerate if $W$ Jacobi field. $(V, W \text{ always proper})$</p>
+
+<h2 id="theorem-1">Theorem 1</h2>
+
+<p>Every Jacobi field $V$ along geodesic $\gamma$ is the variation field of a geodesic variation of $\gamma$.</p>
+
+<h3 id="proof">Proof</h3>
+
+<p>We have just seen the variation field of a geodesic variation being a Jacobi field. $(*)$</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Conversely, let $V: [0, 1] \to TM$ be Jacobi along $\gamma$. Define curve $\sigma(s) = \exp_{\gamma(0)}(sV(0))$ and vector field $W: [0, \varepsilon] \to TM$ s.t. $\begin{cases} W(0) = \dot{\gamma}(0) \ \left.\frac{D}{ds}W\right</td>
+      <td>_{s=0} = \left.\frac{D}{dt}V\right</td>
+      <td>_{t=0} \end{cases}$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>$W$ exists by theory of ODEs in a chart.</p>
+
+<p>Then 
+$\Gamma(s, t) := \exp_{\sigma(s)}(tW(s))$</p>
+
+<p>is a geodesic variation since $\Gamma_s$ are geodesics by def. of $\exp_{\sigma(s)}$.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>From the first part $(*)$ we know $J := S</td>
+      <td>_{s=0}$ is Jacobi.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We have:
+$J(0) = \partial_s \Gamma(s, 0)|<em>{s=0} = \partial_s \sigma(s)|</em>{s=0} = V(0)$</p>
+
+<p>Since $\exp_p(0) = p$. Also:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>$\frac{D}{dt}J(0) = \frac{D}{dt}J(t)</td>
+      <td>_{t=0} = \frac{D}{dt}S</td>
+      <td>_{s,t=0} = \frac{D}{dt}T(s,t)</td>
+      <td>_{s,t=0} = \frac{D}{ds}W(s)</td>
+      <td>_{s=0} = \frac{D}{dt}V(0)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Since derivative at origin of exp is the identity.</p>
+
+<p>Then $J = V$ by the following Lemma. $\square$</p>
+
+<h3 id="lemma-1">Lemma 1</h3>
+
+<p>$\forall \xi, \eta \in T_{\gamma(a)}M \quad \exists! J \in \Gamma(T\gamma)$ s.t. $\begin{cases} J’’ + R(J, \dot{\gamma})\dot{\gamma} = 0 \ J(a) = \xi, \frac{D}{dt}J(a) = \eta \end{cases}$</p>
+
+<h4 id="proof-sketch">Proof sketch</h4>
+
+<p>Choose parallel orthonormal frame along $\gamma$
+$J(t) = J^k(t) E_k \Rightarrow \begin{cases} \dot{J}^i =: V^i \ \dot{V}^i = -R_{jkl}^i J^j \dot{\gamma}^k \dot{\gamma}^l \end{cases}$</p>
+
+<p>has unique sol. by Picard-Lindelöf Theorem. $\square$</p>
+
+<h3 id="consequence">Consequence:</h3>
+<p>$\Gamma(T\gamma) \simeq T_{\gamma(a)}M \oplus T_{\gamma(a)}M$ so $|\Gamma(T\gamma)| = 2n$.</p>
+
+<p>$\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ just reparametrizations,</p>
+
+<p>interesting Jacobi fields are $2n-2$ many.</p>
+
+<p>These are precisely the normal Jacobi fields.</p>
+
+<p>Recall $I(V, V) = -\int_a^T \langle V, V’’ + R(V, \dot{\gamma})\dot{\gamma} \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
+$V$ proper normal vector field along geodesic $\gamma$.</p>
+
+<h2 id="page-4">[Page 4]</h2>
+
+<p>Since $E(\Gamma_\cdot): (-\varepsilon, \varepsilon) \to \mathbb{R}$ the second derivative of a minimum satisfies $I(V, V) \geq 0$.</p>
+
+<p>[<em>Small diagram showing curve with E(Γ) on vertical axis and s on horizontal</em>]</p>
+
+<p>The normal Jacobi fields with vanishing ends are precisely those satisfying $I(V, V) = 0$. $\dim n-1$</p>
+
+<h3 id="proposition-1-normal-and-tangential-jacobi-fields">Proposition 1 (normal and tangential Jacobi fields)</h3>
+
+<p>$J(t)$ remains tangential/normal:</p>
+
+<p>i) $J(t) = \lambda t \dot{\gamma}(t) \Leftrightarrow J(0) = 0, J’(0) = \lambda \dot{\gamma}(0)$
+   Also: $J’’ = 0$</p>
+
+<p>ii) $J(0), J’(0) \perp \dot{\gamma}(0) \Rightarrow J(t) \perp \dot{\gamma}(t) \forall t \in [0, T]$.</p>
+
+<h4 id="proof-1">Proof</h4>
+
+<p>i) Let $J(t) = \lambda t \dot{\gamma}(t)$. Then $J(0) = 0$, $J’(t) = \lambda \dot{\gamma}(t) + 0$.
+   By existence/uniq. only $J(t)$ satisfies these I.C.
+   Clearly $J’’ = 0$.</p>
+
+<p>ii) $\frac{d}{dt}\langle J, \dot{\gamma}\rangle = \langle J’, \dot{\gamma}\rangle \Rightarrow \frac{d^2}{dt^2}\langle J, \dot{\gamma}\rangle = \langle J’’, \dot{\gamma}\rangle$</p>
+
+<p>Since $J’’ = -R(J, \dot{\gamma})\dot{\gamma}$, $\langle J, \dot{\gamma}\rangle’’ = -\langle R(J, \dot{\gamma})\dot{\gamma}, \dot{\gamma} \rangle = 0$</p>
+
+<p>$\Rightarrow \begin{cases} \langle J(t), \dot{\gamma}(t)\rangle = at + b \ \langle J’(t), \dot{\gamma}(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} J(0) \perp \dot{\gamma}(0) \ J’(0) \perp \dot{\gamma}(0) \end{matrix} \Rightarrow \begin{matrix} b = 0 \ a = 0 \end{matrix}$</p>
+
+<p>$\square$</p>
+
+  </article>
 
   
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item ">
-      <a class="page-link" href="/blog/" tabindex="-1" aria-disabled="1">Newer</a>
-    </li>
-    
-      
-        <li class="page-item "><a class="page-link" href="/blog/index.html" title="Home">1</a></li>
-      
-        <li class="page-item active"><a class="page-link" href="/blog/page/2/index.html" title="Home - page 2">2</a></li>
-      
-    
-    <li class="page-item disabled">
-      <a class="page-link" href="">Older</a>
-    </li>
-  </ul>
-</nav>
-
-
 
 </div>
 
