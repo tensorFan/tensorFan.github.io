@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-08T13:23:11+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-08T13:25:18+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Jacobi fields</title><link href="https://tensorfan.github.io/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Jacobi fields" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>https://tensorfan.github.io/blog/2025/jacobi-fields</id><content type="html" xml:base="https://tensorfan.github.io/blog/2025/jacobi-fields/"><![CDATA[<p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $\nabla$.</p>
 
 <p>Recall smooth variation $\Gamma: (-\varepsilon, \varepsilon) \times [a, b] \to M$ of smooth $\gamma: [a, b] \to M$. Denote $\Gamma_s (t) := \Gamma(s, t)$, $\Gamma^t (s) := \Gamma(s, t)$</p>
@@ -12,7 +12,11 @@ $\quad$ [<em>C smooth variation field</em>]</p>
 
 <p>i) symmetry lemma $\frac{D}{dt}S = \frac{D}{ds}T$</p>
 
-<p>ii) compatibility with metric and $[\partial_s, \partial_t] = 0$ and $\frac{D}{dt} = \Gamma^<em>\partial_t$ and $\frac{D}{ds} = \Gamma^</em>\partial_s$</p>
+<p>ii) compatibility with metric and $[\partial_s, \partial_t] = 0$ 
+and $\frac{D}{dt} = \Gamma^<em>\partial_t$ 
+and $\frac{D}{ds} = \Gamma^</em>\partial_s$</p>
+
+<p>we have:</p>
 
 <p>$\Rightarrow \frac{D}{dt}\frac{D}{dt}S = \frac{D}{dt}\frac{D}{ds}T = \frac{D}{ds}\frac{D}{dt}T + R(T, S)T$</p>
 
@@ -35,11 +39,11 @@ $\quad$ [<em>C smooth variation field</em>]</p>
 
 <p>is degenerate if $W$ Jacobi field. $(V, W \text{ always proper})$</p>
 
-<h2 id="theorem-1">Theorem 1</h2>
+<h3 id="theorem-1">Theorem 1</h3>
 
 <p>Every Jacobi field $V$ along geodesic $\gamma$ is the variation field of a geodesic variation of $\gamma$.</p>
 
-<h3 id="proof">Proof</h3>
+<h4 id="proof">Proof</h4>
 
 <p>We have just seen the variation field of a geodesic variation being a Jacobi field. $(*)$</p>
 
@@ -112,8 +116,6 @@ $J(t) = J^k(t) E_k \Rightarrow \begin{cases} \dot{J}^i =: V^i \ \dot{V}^i = -R_{
 
 <p>Recall $I(V, V) = -\int_a^T \langle V, V’’ + R(V, \dot{\gamma})\dot{\gamma} \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
 $V$ proper normal vector field along geodesic $\gamma$.</p>
-
-<h2 id="page-4">[Page 4]</h2>
 
 <p>Since $E(\Gamma_\cdot): (-\varepsilon, \varepsilon) \to \mathbb{R}$ the second derivative of a minimum satisfies $I(V, V) \geq 0$.</p>
 
