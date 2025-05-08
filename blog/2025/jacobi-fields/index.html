@@ -182,7 +182,9 @@
   </header>
 
   <article class="post-content">
-    <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
+    <p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so might refer back to Proposition 1, which is written in this note, in the next note.</p>
+
+<p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
 \(R(X,Y)Z := D_XD_YZ-D_YD_XZ-D_{[X,Y]}Z\)
 for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$. We start by going over some preliminaries.</p>
 
@@ -287,45 +289,46 @@ $J(t) = J^k(t) E_k.$</p>
 <p>has a unique solution by Picard-Lindelöf Theorem. $\square$</p>
 
 <h2 id="consequences">Consequences:</h2>
-<p>$\Gamma(T\gamma) \simeq T_{\gamma(a)}M \oplus T_{\gamma(a)}M$ so $|\Gamma(T\gamma)| = 2n$.</p>
+<p>The space of vector fields along $\gamma$ satisfies the isomorphism $\Gamma(T\gamma) \simeq T_{\gamma(a)}M \oplus T_{\gamma(a)}M$ so $\dim\Gamma(T\gamma) = 2n$.</p>
 
-<p>$\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ just reparametrizations,</p>
+<p>Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations,</p>
 
 <p>So the interesting Jacobi fields are $2n-2$ many.</p>
 
 <p>These are precisely the normal Jacobi fields.</p>
 
 <p>Recall $I(V, V) = -\int_a^T \langle V, V’’ + R(V, \gamma’)\gamma’ \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
-$V$ proper normal vector field along geodesic $\gamma$.</p>
+$V$ is a proper normal vector field along the geodesic $\gamma$.</p>
 
-<p>Since $E(\Gamma_\cdot): (-\varepsilon, \varepsilon) \to \mathbb{R}$ the second derivative of a minimum satisfies $I(V, V) \geq 0$.</p>
+<p>Since $E(\Gamma_\bullet): (-\varepsilon, \varepsilon) \to \mathbb{R}$ is a function the second derivative of a minimum satisfies $I(V, V) \geq 0$.</p>
 
-<p>[<em>Small diagram showing curve with E(Γ) on vertical axis and s on horizontal</em>]</p>
+<!-- [*Small diagram showing curve with E(Γ) on vertical axis and s on horizontal*] -->
 
-<p>The normal Jacobi fields with vanishing ends are precisely those satisfying $I(V, V) = 0$. $\dim n-1$</p>
+<p>The normal Jacobi fields with vanishing ends are precisely those satisfying $I(V, V) = 0$. They are $n-1$ many.</p>
 
 <h3 id="proposition-1-normal-and-tangential-jacobi-fields">Proposition 1 (normal and tangential Jacobi fields)</h3>
 
-<p>$J(t)$ remains tangential/normal:</p>
+<p>A Jacobi field $J(t)$ remains tangential/normal:</p>
 
-<p>i) $J(t) = \lambda t \gamma’(t) \Leftrightarrow J(0) = 0, J’(0) = \lambda \gamma’(0)$
-   Also: $J’’ = 0$</p>
+<p>i) $J(t) = \lambda t \gamma’(t) \Leftrightarrow J(0) = 0, J’(0) = \lambda \gamma’(0)$</p>
 
-<p>ii) $J(0), J’(0) \perp \gamma’(0) \Rightarrow J(t) \perp \gamma’(t) \forall t \in [0, T]$.</p>
+<p>Also in this case $J’’ = 0.$</p>
+
+<p>ii) $J(0), J’(0) \perp \gamma’(0) \Leftrightarrow J(t) \perp \gamma’(t) \forall t \in [0, T]$.</p>
 
 <h4 id="proof-1">Proof</h4>
 
 <p>i) Let $J(t) = \lambda t \gamma’(t)$. Then $J(0) = 0$, $J’(t) = \lambda \gamma’(t) + 0$.
-   By existence/uniq. only $J(t)$ satisfies these I.C.
-   Clearly $J’’ = 0$.</p>
+By existence-uniqueness only $J(t)$ satisfies these initial conditions. 
+Clearly $J’’ = 0$ since $\gamma$ is a geodesic.</p>
 
-<p>ii) $\frac{d}{dt}\langle J, \gamma’\rangle = \langle J’, \gamma’\rangle \Rightarrow \frac{d^2}{dt^2}\langle J, \gamma’\rangle = \langle J’’, \gamma’\rangle$</p>
+<p>ii) By compatibility with the metric
+\(\frac{d}{dt}\langle J, \gamma'\rangle = \langle J', \gamma'\rangle \Rightarrow \frac{d^2}{dt^2}\langle J, \gamma'\rangle = \langle J'', \gamma'\rangle\)</p>
 
-<p>Since $J’’ = -R(J, \gamma’)\gamma’$, $\langle J, \gamma’\rangle’’ = -\langle R(J, \gamma’)\gamma’, \gamma’ \rangle = 0$</p>
+<p>Since $J’’ = -R(J, \gamma’)\gamma’$, we have $\langle J, \gamma’\rangle’’ = -\langle R(J, \gamma’)\gamma’, \gamma’ \rangle = 0$ by the properties of the Riemann curvature. Using the assumption $J(0) \perp \gamma’(0)$ and $J’(0) \perp \gamma’(0)$ we conclude</p>
 
-<p>$\Rightarrow \begin{cases} \langle J(t), \gamma’(t)\rangle = at + b \ \langle J’(t), \gamma’(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} J(0) \perp \gamma’(0) \ J’(0) \perp \gamma’(0) \end{matrix} \Rightarrow \begin{matrix} b = 0 \ a = 0 \end{matrix}$</p>
-
-<p>$\square$</p>
+<p>\(\Rightarrow \begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}\)
+$\square$</p>
 
   </article>
 
