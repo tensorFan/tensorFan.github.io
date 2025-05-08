@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-08T16:33:54+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-08T16:35:52+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Riemannian geometry notes 1: Jacobi fields</title><link href="https://tensorfan.github.io/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Riemannian geometry notes 1: Jacobi fields" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>https://tensorfan.github.io/blog/2025/jacobi-fields</id><content type="html" xml:base="https://tensorfan.github.io/blog/2025/jacobi-fields/"><![CDATA[<p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.</p>
 
 <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
@@ -72,7 +72,7 @@ is a geodesic variation since $\Gamma_s$ are geodesics by definition of the expo
 <table>
   <tbody>
     <tr>
-      <td>From the first part $(*)$ we know $J := S</td>
+      <td>From the first part $(*)$ we know $J:=S</td>
       <td>_{s=0}$ is Jacobi.</td>
     </tr>
   </tbody>
