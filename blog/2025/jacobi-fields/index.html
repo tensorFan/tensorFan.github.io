@@ -182,36 +182,46 @@
   </header>
 
   <article class="post-content">
-    <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the RIemann curvature tensor by $R$.</p>
+    <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
+\(R(X,Y)Z := D_XD_YZ-D_YD_XZ-D_{[X,Y]}Z\)
+for vector fields $X,Y,Z : M\to TM$. We start by going over some preliminaries.</p>
 
-<p>Recall smooth variation $\Gamma: (-\varepsilon, \varepsilon) \times [a, b] \to M$ of smooth $\gamma: [a, b] \to M$. Denote by</p>
+<h2 id="technical-preliminaries">Technical preliminaries</h2>
+
+<p>Let $\Gamma: (-\varepsilon, \varepsilon) \times [a, b] \to M$ be a smooth variation of the smooth curve $\gamma: [a, b] \to M$. It is a local parametrization of $M$. Denote by</p>
 
 \[\Gamma_s (t) := \Gamma(s, t),\ \Gamma^t (s) := \Gamma(s, t)\\
 T := \partial_t \Gamma,\ S := \partial_s \Gamma,\ V := S|_{s=0}.\]
 
-<p>Here $V$ is a smooth variation field.</p>
+<p>Here $V:[a,b]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
+This implies 
+\([S,T]=[T_{(s,t)}\Gamma \partial_t,T_{(s,t)}\Gamma \partial_s]=T_{(s,t)}\Gamma [\partial_s,\partial_t]=0.\)
+In turn,
+\(\begin{align*}
+R(S,T)V &amp;= D_SD_TV-D_TD_SV-D_{[S,T]}V \\
+&amp;= \frac{D}{ds}\frac{D}{dt}V - \frac{D}{dt}\frac{D}{ds}V
+\end{align*}.\)
+Lastly, one can check that $\frac{D}{dt}S = \frac{D}{ds}T$. This is called the symmetry lemma.</p>
 
-<p>[<em>Diagram showing main curves with x and y axes, with points marked</em>]</p>
+<!-- [*Diagram showing main curves with x and y axes, with points marked*] -->
 
-<p>Let all $\Gamma_s$ be geodesics. By</p>
+<h2 id="geodesic-variations">Geodesic variations</h2>
 
-<p>i) pullback connections $\frac{D}{dt} := \Gamma^<em>\partial_t,\ \frac{D}{ds} := \Gamma^</em>\partial_s$</p>
+<p>Let all curves $\Gamma_s$ for fixed $s$ be geodesics. Then $\frac{D}{dt}T=0$.
+We have:</p>
 
-<p>ii) symmetry lemma $\frac{D}{dt}S = \frac{D}{ds}T$</p>
+<p>\(\frac{D}{dt}\frac{D}{dt}S = \frac{D}{dt}\frac{D}{ds}T = \frac{D}{ds}\frac{D}{dt}T - R(S, T)T = R(S, T)T\)
+Setting $s=0$ gives us the Jacobi equation:</p>
 
-<p>iii) compatibility with metric and $[\partial_s, \partial_t] = 0$</p>
+\[V'' + R(V, \gamma')\gamma' = 0 \quad\]
 
-<p>we have:</p>
+<p>where $V’$ is shorthand notation for $\frac{D}{dt} V$.</p>
 
-<p>$\Rightarrow \frac{D}{dt}\frac{D}{dt}S = \frac{D}{dt}\frac{D}{ds}T = \frac{D}{ds}\frac{D}{dt}T + R(T, S)T$</p>
-
-<p>$\Rightarrow V’’ + R(V, \dot{\gamma})\dot{\gamma} = 0 \quad$ [<em>Jacobi equation</em>]</p>
-
-<p>Note that the second proper variation of energy is:</p>
+<p>Let a proper variation be on with fixed end points satisfying $\Gamma(s,a)=\gamma(a)$, $\Gamma(s,b)=\gamma(b)$ and $V(a)=V(b)=0$. Note that the second proper (&lt;- meaning fixed end points) variation of energy is:</p>
 
 \[\left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0} = -\int_a^b \langle V, V'' + R(V, \dot{\gamma})\dot{\gamma} \rangle dt\]
 
-<p>and the symmetric bilinear form</p>
+<p>and the so called index form, which is a symmetric bilinear form</p>
 
 <p>$I(V, W) := -\int_a^b \langle V, W’’ + R(W, \dot{\gamma})\dot{\gamma} \rangle dt \quad$ [<em>index form</em>]</p>
 
