@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-15T21:04:01+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://tensorfan.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tensorfan.github.io/" rel="alternate" type="text/html" /><updated>2025-05-20T19:40:30+02:00</updated><id>https://tensorfan.github.io/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Riemannian geometry notes 1: Jacobi fields</title><link href="https://tensorfan.github.io/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Riemannian geometry notes 1: Jacobi fields" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>https://tensorfan.github.io/blog/2025/jacobi-fields</id><content type="html" xml:base="https://tensorfan.github.io/blog/2025/jacobi-fields/"><![CDATA[<p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.</p>
 
 <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
@@ -7,12 +7,12 @@ for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vect
 
 <h2 id="technical-preliminaries">Technical preliminaries</h2>
 
-<p>Let $\Gamma: (-\varepsilon, \varepsilon) \times [a, b] \to M$ be a smooth variation of the smooth curve $\gamma: [a, b] \to M$. It is a local parametrization of $M$. Denote by</p>
+<p>Let $\Gamma: (-\varepsilon, \varepsilon) \times [0, T] \to M$ be a smooth variation of the smooth curve $\gamma: [0, T] \to M$. It is a local parametrization of $M$. Denote by</p>
 
 \[\Gamma_s (t) := \Gamma(s, t),\ \Gamma^t (s) := \Gamma(s, t)\\
 T := \partial_t \Gamma,\ S := \partial_s \Gamma,\ V := S|_{s=0}.\]
 
-<p>Here $V:[a,b]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
+<p>Here $V:[0,T]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
 This implies</p>
 
 \[[S,T]=[T_{(s,t)}\Gamma \partial_t,T_{(s,t)}\Gamma \partial_s]=T_{(s,t)}\Gamma [\partial_s,\partial_t]=0\]
@@ -41,13 +41,13 @@ We have:</p>
 
 <p>where $V’$ is shorthand notation for $\frac{D}{dt} V$.</p>
 
-<p>Let a proper variation be on with fixed end points satisfying $\Gamma(s,a)=\gamma(a)$, $\Gamma(s,b)=\gamma(b)$ and $V(a)=V(b)=0$. Note that the second proper variation of energy is:</p>
+<p>Let a proper variation be on with fixed end points satisfying $\Gamma(s,0)=\gamma(0)$, $\Gamma(s,T)=\gamma(T)$ and $V(0)=V(T)=0$. Note that the second proper variation of energy is:</p>
 
-\[\left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0} = -\int_a^b \langle V, V'' + R(V, \gamma')\gamma' \rangle dt\]
+\[\left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0} = -\int_0^T \langle V, V'' + R(V, \gamma')\gamma' \rangle dt\]
 
 <p>and the so called index form, which is a symmetric bilinear form</p>
 
-\[I(V, W) := -\int_a^b \langle V, W'' + R(W, \gamma')\gamma' \rangle dt \quad\]
+\[I(V, W) := -\int_0^T \langle V, W'' + R(W, \gamma')\gamma' \rangle dt \quad\]
 
 <p>is degenerate if $W$ Jacobi field. $(V, W \text{ always proper})$</p>
 
@@ -59,11 +59,11 @@ We have:</p>
 
 <p>We have just seen that the variation field of a geodesic variation is a Jacobi field. $(*)$</p>
 
-<p>Conversely, let $V: [0, 1] \to TM$ be Jacobi along $\gamma$, reparametrized $[a,b]\mapsto [0,1]$. Define a curve $\sigma(s) = \exp_{\gamma(0)}(sV(0))$ and a vector field $W: [0, \varepsilon] \to TM$ such that</p>
+<p>Conversely, let $V: [0, 1] \to TM$ be Jacobi along $\gamma$, reparametrized $[0,T]\mapsto [0,1]$. Define a curve $\sigma(s) = \exp_{\gamma(0)}(sV(0))$ and a vector field $W: [0, \varepsilon] \to TM$ such that</p>
 
 \[\begin{cases} W(0) = \gamma'(0) \\ \left.\frac{D}{ds}W\right|_{s=0} = \left.\frac{D}{dt}V\right|_{t=0} \end{cases}\]
 
-<p>$W$ exists by theory of ODEs in a chart.</p>
+<p>We can construct $W$ as follows. Let $W_1$, $W_2$ be parallel transports along $\sigma$ of $\gamma’(0), V’(0)$. Then $D_S W_i = 0$. Setting $W=W_1 + s W_2$ satisfies the conditions established above, since $W(0)=W_1(0)=\gamma(0)$ and $D_S W = W_2$.</p>
 
 <p>Then 
 $\Gamma(s, t) := \exp_{\sigma(s)}(tW(s))$ 
@@ -87,9 +87,9 @@ is Jacobi.</p>
 
 <h3 id="lemma-1">Lemma 1</h3>
 
-<p>$\forall \xi, \eta \in T_{\gamma(a)}M \quad \exists! J :[a,b]\to TM$ such that</p>
+<p>$\forall \xi, \eta \in T_{\gamma(0)}M \quad \exists! J :[0,T]\to TM$ such that</p>
 
-\[\begin{cases} J'' + R(J, \gamma')\gamma' = 0 \\ J(a) = \xi, \frac{D}{dt}J(a) = \eta \end{cases}\]
+\[\begin{cases} J'' + R(J, \gamma')\gamma' = 0 \\ J(0) = \xi, \frac{D}{dt}J(0) = \eta \end{cases}\]
 
 <h4 id="proof-sketch">Proof sketch</h4>
 
@@ -101,7 +101,7 @@ $J(t) = J^k(t) E_k.$</p>
 <p>has a unique solution by Picard-Lindelöf Theorem. $\square$</p>
 
 <h2 id="consequences">Consequences:</h2>
-<p>The space of vector fields along $\gamma$ satisfies the isomorphism $\Gamma(T\gamma) \simeq T_{\gamma(a)}M \oplus T_{\gamma(a)}M$ so $\dim\Gamma(T\gamma) = 2n$.</p>
+<p>The space of vector fields along $\gamma$ satisfies the isomorphism $\Gamma(T\gamma) \simeq T_{\gamma(0)}M \oplus T_{\gamma(0)}M$ so $\dim\Gamma(T\gamma) = 2n$.</p>
 
 <p>Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations,</p>
 
@@ -109,7 +109,7 @@ $J(t) = J^k(t) E_k.$</p>
 
 <p>These are precisely the normal Jacobi fields.</p>
 
-<p>Recall $I(V, V) = -\int_a^T \langle V, V’’ + R(V, \gamma’)\gamma’ \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
+<p>Recall $I(V, V) = -\int_0^T \langle V, V’’ + R(V, \gamma’)\gamma’ \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
 $V$ is a proper normal vector field along the geodesic $\gamma$.</p>
 
 <p>Since $E(\Gamma_\bullet): (-\varepsilon, \varepsilon) \to \mathbb{R}$ is a function the second derivative of a minimum satisfies $I(V, V) \geq 0$.</p>
