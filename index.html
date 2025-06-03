@@ -12,51 +12,159 @@
 
 <!-- Open Graph -->
 
+<!-- DNS Prefetch for performance -->
+<link rel="dns-prefetch" href="//stackpath.bootstrapcdn.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//unpkg.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
 
-<!-- Bootstrap & MDB -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+<!-- Preconnect for critical resources -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Fonts & Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+<!-- Critical CSS inline -->
+<style>
+/* Critical above-the-fold styles */
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
 
-<!-- Code Syntax Highlighting -->
-<!-- <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" /> -->
-<!-- <link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/github.css" /> -->
+.fixed-top-nav {
+  padding-top: 56px;
+}
 
-<!-- Styles -->
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
 
+.navbar-brand {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+.profile {
+  float: right;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: #333;
+  padding: 0.5rem 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #f8f9fa;
+  padding: 1rem 0;
+  border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 768px) {
+  .profile {
+    float: none;
+    text-align: center;
+    margin: 0 0 1rem 0;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+}
+</style>
+
+<!-- Load essential Bootstrap CSS (grid and utilities only) -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap-grid.min.css"></noscript>
+
+<!-- Load Google Fonts with display=swap for better performance -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Roboto+Slab:wght@100;300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Roboto+Slab:wght@100;300;400;500;700&display=swap"></noscript>
+
+<!-- Defer non-critical CSS -->
+<link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
+<noscript><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous"></noscript>
+
+<!-- Load only essential Font Awesome icons -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"></noscript>
+
+<!-- Favicon -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
+<!-- Custom CSS -->
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="/">
 
-<!-- JQuery -->
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<!-- Load jQuery with defer -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
-<!-- Theming-->
-
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/dark_mode.js"></script>
-
-
-
-
-
-
-    
-<!-- MathJax -->
-<!-- <script type="text/javascript">
-  window.MathJax = {
-    tex: {
-      tags: 'ams'
-    }
-  };
-</script> -->
+<!-- MathJax configuration -->
 <script type="text/javascript">
   window.MathJax = {
     tex: {
@@ -66,20 +174,13 @@
     }
   };
 </script>
-<!-- <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-<!-- <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
-<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
 
   </head>
 
   <body class="fixed-top-nav ">
 
     <!-- Header -->
-
     <header>
-
     <!-- Nav Bar -->
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
@@ -101,7 +202,6 @@
           <li class="nav-item ">
             <a class="nav-link" href="/">
               about
-              
             </a>
           </li>
           
@@ -109,76 +209,47 @@
           <li class="nav-item ">
             <a class="nav-link" href="/blog/">
               blog
-              
             </a>
           </li>
           
           <!-- Other pages -->
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
           <li class="nav-item ">
               <a class="nav-link" href="/publications/">
                 papers
-                
               </a>
           </li>
-          
-          
           
           <li class="nav-item ">
               <a class="nav-link" href="/projects/">
                 research activities
-                
               </a>
           </li>
-          
-          
           
           <li class="nav-item ">
               <a class="nav-link" href="/teaching/">
                 teaching
-                
               </a>
           </li>
           
-          
-          
-            <div class = "toggle-container">
+          <div class = "toggle-container">
               <a id = "light-toggle">
                   <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
               </a>
-            </div>
+          </div>
           
         </ul>
       </div>
     </div>
   </nav>
-
 </header>
 
-
     <!-- Content -->
-
     <div class="container mt-5">
       <div class="post">
 
   <header class="post-header">
     <h1 class="post-title">
-      <!---
-     Home
-     -->
     </h1>
      <p class="desc"></p>
   </header>
@@ -186,30 +257,17 @@
   <article>
     
     <div class="profile float-right">
-      
-        <img class="img-fluid z-depth-1 rounded" src="/assets/img/prof_pic.jpg">
-      
-      
+        <img class="img-fluid z-depth-1 rounded" src="/assets/img/prof_pic.jpg" alt="Profile picture">
         <div class="address">
-          <p>University of Montpellier</p> <p>France</p>
-
+          <p>University of Montpellier</p> 
+          <p>France</p>
         </div>
-      
     </div>
     
 
     <div class="clearfix">
-      <!---
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<h1 id="welcome-to-erik-nilssons-homepage">Welcome to Erik Nilsson's homepage!</h1>
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
--->
-
-<h1 id="welcome-to-erik-nilssons-homepage">Welcome to Erik Nilsson’s homepage!</h1>
-
-<!-- I am a PhD student in Numerical Analysis at [KTH](https://www.kth.se/profile/erikni6). My supervisor is [Sara Zahedi](https://www.kth.se/profile/sara7).  -->
 <p>I am a postdoctoral researcher currently based in Montpellier, France. 
 On this site you can view my research and find other links.
 I will also make the occasional post about pieces of mathematics I find interesting.</p>
@@ -217,16 +275,7 @@ I will also make the occasional post about pieces of mathematics I find interest
 <p>Currently a member of <a href="https://erc-nemesis.eu/pis-and-research-team/">NEMESIS</a>. 
 Previously a PhD student at <a href="https://www.kth.se/profile/erikni6">KTH</a>.</p>
 
-<!--    - name: researchgate
-     url: https://www.researchgate.net/profile/Erik-Nilsson-4 -->
-
     </div>
-
-    
-
-    
-
-    
   </article>
 
 </div>
@@ -234,43 +283,67 @@ Previously a PhD student at <a href="https://www.kth.se/profile/erikni6">KTH</a>
     </div>
 
     <!-- Footer -->
-
-    
 <footer class="fixed-bottom">
   <div class="container mt-0">
     &copy; Copyright 2025 Erik A. Nilsson.
-    
-    
-    
   </div>
 </footer>
 
+<!-- Load non-critical JavaScript at the end -->
+<script>
+// Function to load CSS asynchronously
+function loadCSS(href, integrity, crossorigin) {
+  var link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = href;
+  if (integrity) link.integrity = integrity;
+  if (crossorigin) link.crossOrigin = crossorigin;
+  document.head.appendChild(link);
+}
 
+// Function to load JS asynchronously
+function loadJS(src, integrity, crossorigin) {
+  var script = document.createElement('script');
+  script.src = src;
+  if (integrity) script.integrity = integrity;
+  if (crossorigin) script.crossOrigin = crossorigin;
+  document.head.appendChild(script);
+}
 
-  </body>
-
-  <!-- Bootsrap & MDB scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
-
+// Load non-critical resources after page load
+window.addEventListener('load', function() {
+  // Load MDB CSS (only if needed)
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css', 
+          'sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==', 
+          'anonymous');
   
-<!-- Mansory & imagesLoaded -->
+  // Load Academicons (only if needed)
+  loadCSS('https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css', 
+          'sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==', 
+          'anonymous');
+});
+
+// Load theme scripts
+setTimeout(function() {
+  loadJS('/assets/js/theme.js');
+  loadJS('/assets/js/dark_mode.js');
+}, 100);
+</script>
+
+<!-- Essential Bootstrap JS (deferred) -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+
+<!-- Load MathJax (deferred) -->
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+<!-- Load other non-critical scripts -->
 <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script defer src="/assets/js/zoom.js"></script>
+<script defer src="/assets/js/common.js"></script>
 
-
-  
-
-
-<!-- Medium Zoom JS -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
-<script src="/assets/js/zoom.js"></script>
-
-
-<!-- Load Common JS -->
-<script src="/assets/js/common.js"></script>
-
-
+</body>
 </html>
