@@ -16,4 +16,4 @@ git add .
 git commit -m "Update GitHub Pages"
 
 # Push the changes to the gh-pages branch
-git push origin gh-pages
+git push -f origin gh-pages
