@@ -52,17 +52,7 @@
 <!-- jQuery - Load with defer for better performance -->
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
-
 <!-- Theming -->
-
-<script>
-  // Inline critical theme detection to prevent FOUC
-  (function() {
-    const theme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', theme);
-  })();
-</script>
-
 
 <script defer src="/assets/js/theme.js"></script>
 <script defer src="/assets/js/dark_mode.js"></script>
@@ -292,10 +282,5 @@ Supervisor: Sara Zahedi
 <!-- Load Common JS -->
 <script defer src="/assets/js/common.js"></script>
 
-<!-- Dark mode scripts - Load conditionally -->
-<!-- 
-<script defer src="/assets/js/theme.js"></script>
-<script defer src="/assets/js/dark_mode.js"></script>
- -->
 
 </html>
