@@ -48,6 +48,11 @@
 <link rel="stylesheet" href="/assets/css/main.css">
 <link rel="canonical" href="/blog/">
 
+<!-- JQuery -->
+<!-- jQuery - Load with defer for better performance -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+
 <!-- Theming -->
 
 <script>
@@ -57,6 +62,10 @@
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
+
+
+<script defer src="/assets/js/theme.js"></script>
+<script defer src="/assets/js/dark_mode.js"></script>
 
 
 <!-- Analytics -->
@@ -92,7 +101,7 @@
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
       
-      <a class="navbar-brand title font-weight-lighter" href="https://tensorfan.github.io/">
+      <a class="navbar-brand title font-weight-lighter" href="/">
        Home
       </a>
       
@@ -277,9 +286,9 @@
 <script defer src="/assets/js/common.js"></script>
 
 <!-- Dark mode scripts - Load conditionally -->
-
+<!-- 
 <script defer src="/assets/js/theme.js"></script>
 <script defer src="/assets/js/dark_mode.js"></script>
-
+ -->
 
 </html>
