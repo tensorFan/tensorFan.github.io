@@ -1,241 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Home - Erik A. Nilsson</title>
-    <meta name="description" content="Erik Nilsson's academic homepage - Postdoctoral researcher in Numerical Analysis at University of Montpellier, France.">
+<title>Home</title>
+<meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+">
 
-    <!-- Preconnect to external domains -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Critical CSS - Bootstrap core (minified) -->
-    <!-- <style>
-      /* Critical above-the-fold styles */
-      .navbar{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:.5rem 1rem}
-      .navbar-brand{display:inline-block;padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;line-height:inherit;white-space:nowrap}
-      .navbar-nav{display:flex;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}
-      .nav-link{display:block;padding:.5rem 1rem;text-decoration:none}
-      .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
-      .mt-5{margin-top:3rem!important}
-      .profile{width:100%;max-width:300px}
-      .img-fluid{max-width:100%;height:auto}
-      .rounded{border-radius:.25rem!important}
-      .clearfix::after{display:block;clear:both;content:""}
-      .float-right{float:right!important}
-      @media (min-width:576px){.container{max-width:540px}}
-      @media (min-width:768px){.container{max-width:720px}.navbar-nav{flex-direction:row}}
-      @media (min-width:992px){.container{max-width:960px}}
-      @media (min-width:1200px){.container{max-width:1140px}}
-      
-      /* Theme specific styles */
-      body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#333}
-      .navbar-light{background-color:#f8f9fa}
-      .fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}
-      .address{margin-top:1rem;font-size:0.9rem;color:#666}
-      h1{font-size:2rem;margin-bottom:1rem;font-weight:300}
-      p{margin-bottom:1rem}
-      a{color:#007bff;text-decoration:none}
-      a:hover{text-decoration:underline}
-      body.fixed-top-nav{padding-top:56px}
-      
-      /* Toggle container for theme switcher */
-      .toggle-container{margin-left:1rem}
-      #light-toggle{cursor:pointer;font-size:1.2rem;padding:0.5rem}
-      .fas{font-weight:900}
-    </style> -->
+<!-- Open Graph -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
-    <!-- Defer non-critical CSS -->
-    <link rel="preload" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
-    <noscript><link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"></noscript>
+<!-- Critical CSS - Load synchronously -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+
+<!-- Fonts & Icons - Load asynchronously -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap" rel="stylesheet"></noscript>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"></noscript>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous"></noscript>
+
+<!-- MDB CSS - Load asynchronously as it's less critical -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous">
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"></noscript>
+
+<!-- Code Syntax Highlighting - Load asynchronously -->
+<link rel="preload" href="https://combinatronics.io/jwarby/pygments-css/master/github.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/github.css"></noscript>
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
+
+<link rel="stylesheet" href="/website/assets/css/main.css">
+<link rel="canonical" href="/website/">
+
+<!-- Theming -->
+
+<script>
+  // Inline critical theme detection to prevent FOUC
+  (function() {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+
+
+<!-- Analytics -->
+
+
+
     
-    <!-- Load only essential Font Awesome icons -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
-    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet"></noscript>
+<!-- MathJax - Optimized loading -->
+<script>
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    },
+    startup: {
+      pageReady() {
+        // Only process math when page is ready
+        return MathJax.startup.defaultPageReady();
+      }
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
 
-    <!-- Load fonts with display swap for better performance -->
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet"></noscript>
-
-    <!-- Main CSS (defer non-critical) -->
-    <link rel="preload" href="/assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="/assets/css/main.css" rel="stylesheet"></noscript>
-
-    <link rel="canonical" href="/">
-
-    <!-- MathJax configuration (defer) -->
-    <script>
-      window.MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']],
-          displayMath: [['$$', '$$'], ['\\[', '\\]']],
-          tags: 'ams'
-        }
-      };
-    </script>
   </head>
 
-  <body class="fixed-top-nav">
+  <body class="fixed-top-nav ">
 
     <!-- Header -->
+
     <header>
-      <!-- Nav Bar -->
+
+    <!-- Nav Bar -->
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
-      <div class="container">
-        
-        <a class="navbar-brand title font-weight-lighter" href="https://tensorfan.github.io/">
-         Home
-        </a>
-        
-        <!-- Navbar Toggle -->
-        <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar top-bar"></span>
-          <span class="icon-bar middle-bar"></span>
-          <span class="icon-bar bottom-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse text-right" id="navbarNav">
-          <ul class="navbar-nav ml-auto flex-nowrap">
-            <!-- About -->
-            <li class="nav-item ">
-              <a class="nav-link" href="/">
-                about
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="/website/">
+       Home
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/website/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/website/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/publications/">
+                papers
+                
               </a>
-            </li>
-            <!-- Blog -->
-            <li class="nav-item ">
-              <a class="nav-link" href="/blog/">
-                blog
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/projects/">
+                research activities
+                
               </a>
-            </li>
-            <!-- Other pages -->
-            <li class="nav-item ">
-                <a class="nav-link" href="/publications/">
-                  papers
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/projects/">
-                  research activities
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="/teaching/">
-                  teaching
-                </a>
-            </li>
-              <div class = "toggle-container">
-                <a id = "light-toggle">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </a>
-              </div>
-          </ul>
-        </div>
+          </li>
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/website/teaching/">
+                teaching
+                
+              </a>
+          </li>
+          
+          
+          
+            <div class = "toggle-container">
+              <a id = "light-toggle">
+                  <i class="fas fa-moon"></i>
+                  <i class="fas fa-sun"></i>
+              </a>
+            </div>
+          
+        </ul>
       </div>
-    </nav>
-    </header>
+    </div>
+  </nav>
+
+</header>
+
 
     <!-- Content -->
+
     <div class="container mt-5">
       <div class="post">
-        <header class="post-header">
-          <h1 class="post-title"></h1>
-          <p class="desc"></p>
-        </header>
 
-        <article>
-          <div class="profile float-right">
-            <!-- Optimized image with proper sizing and lazy loading -->
-            <img class="img-fluid z-depth-1 rounded" 
-                 src="/assets/img/prof_pic.jpg" 
-                 alt="Erik Nilsson profile photo"
-                 width="300" 
-                 height="300"
-                 loading="lazy">
-            
-            <div class="address">
-              <p>University of Montpellier</p>
-              <p>France</p>
-            </div>
-          </div>
+  <header class="post-header">
+    <h1 class="post-title">
+      <!---
+     Home
+     -->
+    </h1>
+     <p class="desc"></p>
+  </header>
 
-          <div class="clearfix">
-            <h1 id="welcome-to-erik-nilssons-homepage">Welcome to Erik Nilsson's homepage!</h1>
+  <article>
+    
+    <div class="profile float-right">
+      
+        <img class="img-fluid z-depth-1 rounded" src="/website/assets/img/prof_pic.jpg">
+      
+      
+        <div class="address">
+          <p>Room 3738</p> <p>Lindstedtsvägen 25 KTH</p> <p>Stockholm</p>
 
-            <p>I am a postdoctoral researcher currently based in Montpellier, France. 
-            On this site you can view my research and find other links.
-            I will also make the occasional post about pieces of mathematics I find interesting.</p>
+        </div>
+      
+    </div>
+    
 
-            <p>Currently a member of <a href="https://erc-nemesis.eu/pis-and-research-team/" rel="noopener">NEMESIS</a>. 
-            Previously a PhD student at <a href="https://www.kth.se/profile/erikni6" rel="noopener">KTH</a>.</p>
-          </div>
-        </article>
-      </div>
+    <div class="clearfix">
+      <!---
+Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com){:target="\_blank"}. You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+
+Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+
+Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/){:target="\_blank"} and [Academicons](https://jpswalsh.github.io/academicons/){:target="\_blank"}, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+-->
+
+<h1 id="welcome-to-erik-nilssons-homepage">Welcome to Erik Nilsson’s homepage!</h1>
+
+<p>I am a PhD student in Numerical Analysis at <a href="https://www.kth.se/profile/erikni6">KTH</a>. My supervisor is <a href="https://www.kth.se/profile/sara7">Sara Zahedi</a>. On this site you can view my research and find other links.
+I will also make the occasional post about to me interesting mathematics.</p>
+
+<!--
+KTH web: [link](https://www.kth.se/profile/erikni6)
+youtube: [link](https://youtu.be/gHnMNyNgrio)
+
+# Current position
+
+PhD student at KTH Royal Institute of Technology
+
+Supervisor: Sara Zahedi
+-->
+
+    </div>
+
+    
+
+    
+
+    
+  </article>
+
+</div>
+
     </div>
 
     <!-- Footer -->
-    <footer class="fixed-bottom">
-      <div class="container mt-0">
-        &copy; Copyright 2025 Erik A. Nilsson.
-      </div>
-    </footer>
 
-    <!-- Defer all JavaScript to end of body -->
-    <!-- Load minimal jQuery -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
     
-    <!-- Bootstrap JS (only load what's needed) -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
-    <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
-
-    <!-- Theme scripts -->
-    <script defer src="/assets/js/theme.js"></script>
-    <script defer src="/assets/js/dark_mode.js"></script>
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    &copy; Copyright 2025 Erik A. Nilsson.
     
-    <!-- MathJax (load only when needed) -->
-    <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+    
+    
+  </div>
+</footer>
 
-    <!-- Other utility scripts (defer) -->
-    <script defer src="/assets/js/common.js"></script>
 
-    <!-- Load masonry and image loading only if needed -->
-    <script>
-      // Conditional loading for masonry (only if needed)
-      if (document.querySelectorAll('.masonry').length > 0) {
-        const script1 = document.createElement('script');
-        script1.src = 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js';
-        document.head.appendChild(script1);
-        
-        const script2 = document.createElement('script');
-        script2.src = 'https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js';
-        document.head.appendChild(script2);
-        
-        const script3 = document.createElement('script');
-        script3.src = '/assets/js/mansory.js';
-        document.head.appendChild(script3);
-      }
-
-      // Load medium zoom only if there are zoomable images
-      if (document.querySelectorAll('[data-zoomable]').length > 0) {
-        const zoomScript = document.createElement('script');
-        zoomScript.src = 'https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js';
-        zoomScript.onload = function() {
-          const zoomInitScript = document.createElement('script');
-          zoomInitScript.src = '/assets/js/zoom.js';
-          document.head.appendChild(zoomInitScript);
-        };
-        document.head.appendChild(zoomScript);
-      }
-    </script>
 
   </body>
+
+  <!-- Optimized Bootstrap & MDB scripts - Load only what's needed -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+
+<!-- Only load MDB if specific components are used -->
+
+  
+<!-- Masonry & imagesLoaded - Load only when needed -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/website/assets/js/mansory.js"></script>
+
+  
+
+
+<!-- Medium Zoom JS - Load conditionally -->
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script defer src="/website/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script defer src="/website/assets/js/common.js"></script>
+
+<!-- Dark mode scripts - Load conditionally -->
+
+<script defer src="/website/assets/js/theme.js"></script>
+<script defer src="/website/assets/js/dark_mode.js"></script>
+
+
 </html>

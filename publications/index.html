@@ -10,67 +10,75 @@
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
+<!-- Preconnect to external domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://stackpath.bootstrapcdn.com">
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
 <!-- Open Graph -->
 
 
-<!-- Bootstrap & MDB -->
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+<!-- Critical CSS - Load synchronously -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
 
-<!-- Fonts & Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+<!-- Fonts & Icons - Load asynchronously -->
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap" rel="stylesheet"></noscript>
 
-<!-- Code Syntax Highlighting -->
-<!-- <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" /> -->
-<link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/github.css" />
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous"></noscript>
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous"></noscript>
+
+<!-- MDB CSS - Load asynchronously as it's less critical -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous">
+<noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet"></noscript>
+
+<!-- Code Syntax Highlighting - Load asynchronously -->
+<link rel="preload" href="https://combinatronics.io/jwarby/pygments-css/master/github.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://combinatronics.io/jwarby/pygments-css/master/github.css"></noscript>
 
 <!-- Styles -->
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📜</text></svg>">
 
-<link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="/publications/">
+<link rel="stylesheet" href="/website/assets/css/main.css">
+<link rel="canonical" href="/website/publications/">
 
-<!-- JQuery -->
-<!-- jQuery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<!-- Theming -->
+
+<script>
+  // Inline critical theme detection to prevent FOUC
+  (function() {
+    const theme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
 
 
-<!-- Theming-->
-
-<script src="/assets/js/theme.js"></script>
-<script src="/assets/js/dark_mode.js"></script>
-
-
-
+<!-- Analytics -->
 
 
 
     
-<!-- MathJax -->
-<!-- <script type="text/javascript">
+<!-- MathJax - Optimized loading -->
+<script>
   window.MathJax = {
     tex: {
       tags: 'ams'
-    }
-  };
-</script> -->
-<script type="text/javascript">
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      tags: 'ams'
+    },
+    startup: {
+      pageReady() {
+        // Only process math when page is ready
+        return MathJax.startup.defaultPageReady();
+      }
     }
   };
 </script>
-<!-- <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-<!-- <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
-<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
 
   </head>
 
@@ -84,7 +92,7 @@
     <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
     <div class="container">
       
-      <a class="navbar-brand title font-weight-lighter" href="https://tensorfan.github.io/">
+      <a class="navbar-brand title font-weight-lighter" href="/website/">
        Home
       </a>
       
@@ -99,7 +107,7 @@
         <ul class="navbar-nav ml-auto flex-nowrap">
           <!-- About -->
           <li class="nav-item ">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="/website/">
               about
               
             </a>
@@ -107,7 +115,7 @@
           
           <!-- Blog -->
           <li class="nav-item ">
-            <a class="nav-link" href="/blog/">
+            <a class="nav-link" href="/website/blog/">
               blog
               
             </a>
@@ -130,7 +138,7 @@
           
           
           <li class="nav-item active">
-              <a class="nav-link" href="/publications/">
+              <a class="nav-link" href="/website/publications/">
                 papers
                 
                 <span class="sr-only">(current)</span>
@@ -141,7 +149,7 @@
           
           
           <li class="nav-item ">
-              <a class="nav-link" href="/projects/">
+              <a class="nav-link" href="/website/projects/">
                 research activities
                 
               </a>
@@ -150,7 +158,7 @@
           
           
           <li class="nav-item ">
-              <a class="nav-link" href="/teaching/">
+              <a class="nav-link" href="/website/teaching/">
                 teaching
                 
               </a>
@@ -180,7 +188,7 @@
 
   <header class="post-header">
     <h1 class="post-title">papers</h1>
-    <p class="post-description">by year</p>
+    <p class="post-description">sorted by year</p>
   </header>
 
   <article>
@@ -212,468 +220,381 @@
     <!-- _pages/publications.md -->
 <div class="publications">
 
-<!--  -->
 
-<!--  -->
-<ol class="bibliography"><li>
-
-<div class="row">
-  <!-- Publication Thumbnail Column -->
-  <div class="col-sm-2">
-    
-      <!-- Try to use the citation key if no preview is specified -->
-      <img src="/assets/img/publications/BoNil2024VEM.png" class="img-fluid z-depth-1 rounded" alt="Paper preview for Nodal auxiliary space preconditioners for mixed virtual element methods" onerror="this.style.display='none'" />
-    
-  </div>
+  <h2 class="year">2024</h2>
+  <ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
   
-  <!-- Publication Details Column -->
-  <div class="col-sm-10">
-    <div class="title">Nodal auxiliary space preconditioners for mixed virtual element methods</div>
-    <div class="author">
-      
-        
-          
-            
-              
-                Boon, Wietse M,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                and Nilsson, Erik
-              
-            
-          
-        
-      
-    </div>
-
-    <div class="periodical">
-      
-        <em>ESAIM: Mathematical Modelling and Numerical Analysis</em>
-      
-      
-        2025
-      
-    </div>
-
-    <div class="links">
-      
-      
-        <a href="http://arxiv.org/abs/arXiv:2404.12823" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-    </div>
-    <div class="description"></div>
-
-    <!-- Hidden abstract block -->
-    
   </div>
-</div></li>
-<li>
 
-<div class="row">
-  <!-- Publication Thumbnail Column -->
-  <div class="col-sm-2">
+  <div id="BoNil2024VEM" class="col-sm-8">
     
-      <!-- Try to use the citation key if no preview is specified -->
-      <img src="/assets/img/publications/FraNiZa2024.png" class="img-fluid z-depth-1 rounded" alt="Paper preview for Stabilized Lagrange Multipliers for Dirichlet Boundary Conditions in Divergence Preserving Unfitted Methods" onerror="this.style.display='none'" />
-    
-  </div>
-  
-  <!-- Publication Details Column -->
-  <div class="col-sm-10">
-    <div class="title">Stabilized Lagrange Multipliers for Dirichlet Boundary Conditions in Divergence Preserving Unfitted Methods</div>
-    <div class="author">
-      
+      <div class="title">Nodal auxiliary space preconditioners for mixed virtual element methods</div>
+      <div class="author">
         
+          
+          
+          
+          
+          
           
             
               
-                Frachon, Thomas,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                Nilsson, Erik,
+                
+                  Boon, Wietse,
+                
               
             
           
         
-      
-        
+          
+          
+          
+          
+          
           
             
               
-                and Zahedi, Sara
+                
+                  and Nilsson, Erik
+                
               
             
           
         
-      
-    </div>
+      </div>
 
-    <div class="periodical">
+      <div class="periodical">
       
-        <em>arXiv preprint arXiv:2408.10089</em>
+        <em>arXiv preprint arXiv:2404.12823</em>
       
       
         2024
       
-    </div>
+      </div>
+    
 
     <div class="links">
-      
-      
-        <a href="http://arxiv.org/abs/2408.10089" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    
+    
+      <a href="http://arxiv.org/abs/arXiv:2404.12823" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
-    <div class="description"></div>
 
     <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li>
 
-<div class="row">
-  <!-- Publication Thumbnail Column -->
-  <div class="col-sm-2">
-    
-      <!-- Try to use the citation key if no preview is specified -->
-      <img src="/assets/img/publications/FraNiZa2023Stokes.png" class="img-fluid z-depth-1 rounded" alt="Paper preview for Divergence-free cut finite element methods for Stokes flow" onerror="this.style.display='none'" />
+    <!-- Hidden bibtex block -->
     
   </div>
+</div>
+</li></ol>
+
+  <h2 class="year">2023</h2>
+  <ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
   
-  <!-- Publication Details Column -->
-  <div class="col-sm-10">
-    <div class="title">Divergence-free cut finite element methods for Stokes flow</div>
-    <div class="author">
-      
-        
-          
-            
-              
-                Frachon, Thomas,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                Nilsson, Erik,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                and Zahedi, Sara
-              
-            
-          
-        
-      
-    </div>
+  </div>
 
-    <div class="periodical">
+  <div id="FraNiZa2023Stokes" class="col-sm-8">
+    
+      <div class="title">Divergence-free cut finite element methods for Stokes flow</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Frachon, Thomas,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Nilsson, Erik,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  and Zahedi, Sara
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
       
-        <em>BIT Numerical Mathematics</em>
+        <em>arXiv preprint arXiv:2304.14230</em>
       
       
-        2024
+        2023
       
-    </div>
+      </div>
+    
 
     <div class="links">
-      
-      
-        <a href="http://arxiv.org/abs/arXiv:2304.14230" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    
+    
+      <a href="http://arxiv.org/abs/arXiv:2304.14230" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
-    <div class="description"></div>
 
     <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li>
 
-<div class="row">
-  <!-- Publication Thumbnail Column -->
-  <div class="col-sm-2">
-    
-      <!-- Try to use the citation key if no preview is specified -->
-      <img src="/assets/img/publications/FraHaNiZa2022.png" class="img-fluid z-depth-1 rounded" alt="Paper preview for A divergence preserving cut finite element method for Darcy flow" onerror="this.style.display='none'" />
+    <!-- Hidden bibtex block -->
     
   </div>
+</div>
+</li></ol>
+
+  <h2 class="year">2022</h2>
+  <ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
   
-  <!-- Publication Details Column -->
-  <div class="col-sm-10">
-    <div class="title">A divergence preserving cut finite element method for Darcy flow</div>
-    <div class="author">
-      
-        
-          
-            
-              
-                Frachon, Thomas,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                Hansbo, Peter,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                Nilsson, Erik,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                and Zahedi, Sara
-              
-            
-          
-        
-      
-    </div>
+  </div>
 
-    <div class="periodical">
+  <div id="FraHaNiZa2022" class="col-sm-8">
+    
+      <div class="title">A divergence preserving cut finite element method for Darcy flow</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Frachon, Thomas,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Hansbo, Peter,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Nilsson, Erik,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  and Zahedi, Sara
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
       
         <em>SIAM Journal on Scientific Computing 46 (3)</em>
       
       
         2022
       
-    </div>
+      </div>
+    
 
     <div class="links">
-      
-      
-        <a href="http://arxiv.org/abs/2205.12023" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    
+    
+      <a href="http://arxiv.org/abs/2205.12023" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
-    <div class="description"></div>
 
     <!-- Hidden abstract block -->
     
-  </div>
-</div></li>
-<li>
 
-<div class="row">
-  <!-- Publication Thumbnail Column -->
-  <div class="col-sm-2">
-    
-      <!-- Try to use the citation key if no preview is specified -->
-      <img src="/assets/img/publications/NiRoRyDonut2021.png" class="img-fluid z-depth-1 rounded" alt="Paper preview for The isospectral problem for flat tori from three perspectives" onerror="this.style.display='none'" />
+    <!-- Hidden bibtex block -->
     
   </div>
+</div>
+</li></ol>
+
+  <h2 class="year">2021</h2>
+  <ol class="bibliography"><li><div class="row">
+  <div class="col-sm-2 abbr">
   
-  <!-- Publication Details Column -->
-  <div class="col-sm-10">
-    <div class="title">The isospectral problem for flat tori from three perspectives</div>
-    <div class="author">
-      
-        
-          
-            
-              
-                Nilsson, Erik,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                Rowlett, Julie,
-              
-            
-          
-        
-      
-        
-          
-            
-              
-                and Rydell, Felix
-              
-            
-          
-        
-      
-    </div>
+  </div>
 
-    <div class="periodical">
+  <div id="NiRoRyDonut2021" class="col-sm-8">
+    
+      <div class="title">The isospectral problem for flat tori from three perspectives</div>
+      <div class="author">
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Nilsson, Erik,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  Rowlett, Julie,
+                
+              
+            
+          
+        
+          
+          
+          
+          
+          
+          
+            
+              
+                
+                  and Rydell, Felix
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
       
         <em>Bulletin of the American Mathematical Society 60 (1)</em>
       
       
         2021
       
-    </div>
+      </div>
+    
 
     <div class="links">
-      
-      
-        <a href="http://arxiv.org/abs/2110.09457v2" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-        <a href="https://www.ams.org/journals/bull/0000-000-00/S0273-0979-2022-01770-3/?active=current" class="btn btn-sm z-depth-0" role="button" target="_blank">Website</a>
-      
+    
+    
+      <a href="http://arxiv.org/abs/2110.09457v2" class="btn btn-sm z-depth-0" role="button" target="_blank">arXiv</a>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     </div>
-    <div class="description">[Picture is from the Hévéa project, see https://hevea-project.fr/ENPageToreImages.html or the website link.]</div>
 
     <!-- Hidden abstract block -->
     
+
+    <!-- Hidden bibtex block -->
+    
   </div>
-</div></li></ol>
+</div>
+</li></ol>
 
 
 </div>
-
-<style>
-  /* .publications h2.year {
-    // left:-200px;
-    width: 1000px;
-    border-top: 3px solid var(--global-theme-color); // Thicker separator
-    padding-top: 2rem;
-  } */
-
-  .publications .row {
-    left: 200px;
-    margin-bottom: 60px;
-    position: relative;
-    /* padding-left: -250px;  */
-    min-height: 200px; /* Ensure rows have enough height for images */
-    max-width: 600px; /* 600% */
-  }
-  
-  /* Position the image relatively */
-  .col-sm-2 {
-    /* margin-left: auto; 
-    margin-right: 0; */
-    position: relative;
-    left: 350px;
-    /* top: 0; */
-    /* width: 300px; */
-    /* float: right; */
-  } 
-  
-  /* Super-sized images */
-  .publications img {
-    max-height: 160px;
-    max-width: 400px; /* 600% */
-    height: auto;
-    border: 1px solid #ddd;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-  }
-  
-  /* Text column takes full width */
-  .col-sm-10 {
-    left: -300px;
-    width: 100%; 
-  }
-
-  /* Adjust for mobile */
-  @media (max-width: 767px) {
-    .publications .row {
-      left: 0;
-      margin-bottom: 30px;
-      padding-top: 20px;
-      max-width: 100%;
-    }
-    .col-sm-2 {
-      left: 0;
-      width: 100%;
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .col-sm-10 {
-      left: 0;
-      width: 100%;
-    }
-    .publications img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-</style>
-
 
   </article>
 
@@ -697,28 +618,33 @@
 
   </body>
 
-  <!-- Bootsrap & MDB scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+  <!-- Optimized Bootstrap & MDB scripts - Load only what's needed -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+
+<!-- Only load MDB if specific components are used -->
 
   
-<!-- Mansory & imagesLoaded -->
+<!-- Masonry & imagesLoaded - Load only when needed -->
 <script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
-
+<script defer src="/website/assets/js/mansory.js"></script>
 
   
 
 
-<!-- Medium Zoom JS -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
-<script src="/assets/js/zoom.js"></script>
+<!-- Medium Zoom JS - Load conditionally -->
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script defer src="/website/assets/js/zoom.js"></script>
 
 
 <!-- Load Common JS -->
-<script src="/assets/js/common.js"></script>
+<script defer src="/website/assets/js/common.js"></script>
+
+<!-- Dark mode scripts - Load conditionally -->
+
+<script defer src="/website/assets/js/theme.js"></script>
+<script defer src="/website/assets/js/dark_mode.js"></script>
 
 
 </html>
