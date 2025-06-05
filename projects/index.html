@@ -77,6 +77,15 @@
     }
   };
 </script>
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    }
+  };
+</script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-mml-chtml.js"></script>
 
   </head>
@@ -205,11 +214,20 @@
 , with S. Zahedi and T. Frachon</li>
 </ul>
 
-<p>Partial differential equations (PDEs) are fantastic models of physical phenomena occuring in nature, but they are notoriously hard to solve. It is possible to find approximate solutions through the help of computers which, in cases where we know the exact solution, can be shown to converge (i.e. get closer with respect to some refinement) to this exact solution. When the computational domain gets cut in two by some interface, perhaps modelling a fracture or an interface separating two media, the problem becomes even harder to solve.</p>
+<!-- Partial differential equations (PDEs) are fantastic models of physical phenomena occuring in nature, but they are notoriously hard to solve. It is possible to find approximate solutions through the help of computers which, in cases where we know the exact solution, can be shown to converge (i.e. get closer with respect to some refinement) to this exact solution. When the computational domain gets cut in two by some interface, perhaps modelling a fracture or an interface separating two media, the problem becomes even harder to solve.
 
-<p>We use the so called Cut Finite Element Method (CutFEM) to efficiently compute approximate solutions to these problems. However, the method is generally unable to preserve a conservation law over the course of the simulation. We say that such a numerical method is not divergence preserving. The aim is then to find a modification to the CutFEM framework which is divergence preserving.</p>
+We use the so called Cut Finite Element Method (CutFEM) to efficiently compute approximate solutions to these problems. However, the method is generally unable to preserve a conservation law over the course of the simulation. We say that such a numerical method is not divergence preserving. The aim is then to find a modification to the CutFEM framework which is divergence preserving. -->
 
-<p><a href="https://arxiv.org/abs/2205.12023">This paper</a> is our first presentation of a method which accomplishes the above, in the setting of the Darcy interface problem which models porous media flow. The method introduces stabilization terms which preserve the saddle-point structure of the problem. The same mixed stabilization terms allow us to find methods exhibiting divergence-free velocity solutions also for Stokes flow, see <a href="https://arxiv.org/abs/2304.14230">this follow-up paper</a>.</p>
+<p>The cut finite element method (CutFEM) is a numerical method for meshes unfitted to the physical domain associated to a partial differential equation. In <a href="https://arxiv.org/abs/2205.12023">this paper</a> we present a method which is able to preserve a conservation law - a condition on the divergence - in the setting of the Darcy interface problem, which models flow of porous media. The method introduces stabilization terms which preserve the saddle-point structure of the problem. The same mixed stabilization terms allow us to find methods exhibiting divergence-free velocity solutions also for Stokes flow, see <a href="https://arxiv.org/abs/2304.14230">this follow-up paper</a>.</p>
+
+<ul>
+  <li>Auxiliary space preconditioners for mixed virtual element methods
+, with W. Boon</li>
+</ul>
+
+<!-- We propose nodal auxiliary space preconditioners for facet and edge virtual elements of lowest order by deriving discrete regular decompositions on polytopal grids and generalizing the Hiptmair-Xu preconditioner to the virtual element framework. The preconditioner consists of solving a sequence of elliptic problems on the nodal virtual element space, combined with appropriate smoother steps. Under assumed regularity of the mesh, the preconditioned system is proven to have bounded spectral condition number independent of the mesh size and this is verified by numerical experiments on a sequence of polygonal meshes. Moreover, we observe numerically that the preconditioner is robust on meshes containing elements with high aspect ratios. -->
+
+<p>In <a href="https://arxiv.org/abs/2404.12823">this work</a> we propose nodal auxiliary space preconditioners for facet and edge virtual elements of lowest order, for applications to PDEs approximated using the virtual element method (VEM). Under assumed regularity of the mesh, the preconditioned system is proven to have bounded spectral condition number independent of the mesh size and this is verified by numerical experiments on a sequence of polygonal meshes. Moreover, we observe numerically that the preconditioner is robust on meshes containing elements with high aspect ratios.</p>
 
 <ul>
   <li>Can one hear the shape of a flat torus? [~2021]
