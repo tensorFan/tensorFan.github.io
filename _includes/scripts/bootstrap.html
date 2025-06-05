@@ -1,0 +1,8 @@
+<!-- Optimized Bootstrap & MDB scripts - Load only what's needed -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/{{ site.popper.version }}/umd/popper.min.js" integrity="{{ site.popper.integrity }}" crossorigin="anonymous"></script>
+<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/{{ site.bootstrap.version }}/js/bootstrap.min.js" integrity="{{ site.bootstrap.integrity.js }}" crossorigin="anonymous"></script>
+
+<!-- Only load MDB if specific components are used -->
+{% if site.enable_mdb or page.enable_mdb %}
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/{{ site.mdb.version }}/js/mdb.min.js" integrity="{{ site.mdb.integrity.js }}" crossorigin="anonymous"></script>
+{% endif %}

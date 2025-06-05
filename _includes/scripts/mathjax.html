@@ -1,0 +1,26 @@
+{% if site.enable_math %}
+<!-- MathJax - Optimized loading -->
+<script>
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    },
+    startup: {
+      pageReady() {
+        // Only process math when page is ready
+        return MathJax.startup.defaultPageReady();
+      }
+    }
+  };
+</script>
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@{{ site.mathjax.version }}/es5/tex-mml-chtml.js"></script>
+{% endif %}
