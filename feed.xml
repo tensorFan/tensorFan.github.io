@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-06-09T16:56:53+02:00</updated><id>/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-06-18T16:22:35+02:00</updated><id>/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 </subtitle><entry><title type="html">Jacobi fields I</title><link href="/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Jacobi fields I" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi-fields</id><content type="html" xml:base="/blog/2025/jacobi-fields/"><![CDATA[<p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.</p>
 
 <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
@@ -143,52 +143,59 @@ Clearly $J’’ = 0$ since $\gamma$ is a geodesic.</p>
 
 <p>\(\Rightarrow \begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}\)
 <!-- $\square$ --></p>
-<div style="text-align: right"> $\square$ </div>]]></content><author><name></name></author><summary type="html"><![CDATA[In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.]]></summary></entry><entry><title type="html">Jacobi fields - vanishing at a point and comparison theorems</title><link href="/blog/2025/jacobi_fields_comparison/" rel="alternate" type="text/html" title="Jacobi fields - vanishing at a point and comparison theorems" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi_fields_comparison</id><content type="html" xml:base="/blog/2025/jacobi_fields_comparison/"><![CDATA[<!-- ## Jacobi fields vanishing at a point
+<div style="text-align: right"> $\square$ </div>]]></content><author><name></name></author><summary type="html"><![CDATA[In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.]]></summary></entry><entry><title type="html">Jacobi fields II: connection with curvature</title><link href="/blog/2025/jacobi_fields_comparison/" rel="alternate" type="text/html" title="Jacobi fields II: connection with curvature" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi_fields_comparison</id><content type="html" xml:base="/blog/2025/jacobi_fields_comparison/"><![CDATA[<p>We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.</p>
 
-Let $J: [0,\pi] \to TM$ such that $J(0) = 0$.
+<h2 id="jacobi-fields-vanishing-at-a-point">Jacobi fields vanishing at a point</h2>
+
+<p>Let $J: [0,\pi] \to TM$ such that $J(0) = 0$.
 Then the geodesic variation $\Gamma(s,t) = \exp_{\sigma(s)}(tW(s))$
-has a certain form which gives a nice formula for $J$.
+has a certain form which gives a nice formula for $J$.</p>
 
-$$T_v T_p M \simeq T_p M$$
+<p>Here we shall make use of the identification
+\(T_v T_p M \simeq T_p M\)
+for $p\in M$ and $v\in T_pM$.</p>
 
+<p><img src="../assets/img/blog_posts/j2-1.png" alt="alt text" /></p>
 
-![alt text](../assets/img/blog_posts/j2-1.png) 
+<p>For the differential of a function $f:M\to N$ between manifolds we shall use the notation at each point $(df)<em>p:T_pM\to T</em>{f(p)}N$.</p>
 
-### Lemma 2 (explicit form of Jacobi fields)
+<h3 id="lemma-2-explicit-form-of-jacobi-fields">Lemma 2 (explicit form of Jacobi fields)</h3>
 
-Let $\gamma: [0,\pi] \to M$ geodesic, $p = \gamma(0)$, $v = \gamma'(0)$.
-Let $J: [0,\pi] \to TM$ Jacobi, $J(0) = 0$, $J'(0) = \frac{D}{dt}J|_{t=0} = w$
+<p>Let $\gamma: [0,1] \to M$ be a geodesic, $p = \gamma(0)$, $v = \gamma’(0)$.
+Let $J: [0,\pi] \to TM$ be a Jacobi field such that $J(0) = 0$, $J’(0) = \frac{D}{dt}J|_{t=0} = w.$</p>
 
-Then $J(t) = (d\exp_p)_{tv}(tw)$ ← only true if
+<p>Then $J(t) = (d\exp_p)_{tv}(tw).$</p>
 
-![alt text](../assets/img/blog_posts/j2-2.png) 
+<h4 id="proof">Proof</h4>
 
-#### Proof
+<p>We have $\gamma(t) = \exp_p(tv)$.
+Consider the variation $(s,t)\to \exp_p(t(v + sw))$.</p>
 
-$\gamma(t) = \exp_p(tv)$
+<p>Since each $\gamma_s := \exp_p(\cdot(v+sw))$ geodesic, it’s a geodesic variation.</p>
 
-Consider $\exp_p(t(v + sw))$
+<p><img src="../assets/img/blog_posts/j2-2.png" alt="alt text" /></p>
 
-Since each $\gamma_s := \exp_p(\cdot|v+sw|)$ geodesic, it's a geodesic variation.
+<p>Recall that the exponential map at a point $p$ is a function $\exp_p: T_pM\to M$. 
+Thus by the chain rule,
+\(J = \partial_s \exp_p(t(v+sw))|_{s=0}\)</p>
 
-$$\Rightarrow \overline{J} = \partial_s \exp_p(t(v+sw))|_{s=0}$$
+\[= (d\exp_p)_{t(v+sw)} \partial_s t(v+sw)|_{s=0}\]
 
-$$= (d\exp_p)_{t(v+sw)} \partial_s t(v+sw)|_{s=0}$$
-
-$$= (d\exp_p)_{tv}(sw), \quad \text{is Jacobi !}$$ 
+<p>\(= (d\exp_p)_{tv}(sw),\)
+is a Jacobi field.</p>
 <div style="text-align: right"> $\square$ </div>
 
----
+<hr />
 
-### Gauss Lemma
+<h3 id="gauss-lemma">Gauss Lemma</h3>
 
-Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ defined for $t \in [0,1]$
+<p>Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ defined for $t \in [0,1]$. Then,</p>
 
-$$\Rightarrow \langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle v,w \rangle, \quad w \in T_v T_p M \simeq T_p M$$
+\[\langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle v,w \rangle, \quad w \in T_v T_p M \simeq T_p M\]
 
-$$= \langle T_v \exp_p v, T_v \exp_p w \rangle$$
+\[= \langle T_v \exp_p v, T_v \exp_p w \rangle\]
 
-#### Proof
+<!-- #### Proof
 
 We know that $J(t) = (d\exp_p)_{tv}(tw): [0,1] \to TM$
 
@@ -325,7 +332,7 @@ $J(t) = \sinh t w$, $w \perp v$
 
 $\sinh t = t^2 + \frac{t^4}{3} + O(t^5)$
 
-$$\Rightarrow K = -1$$ -->]]></content><author><name></name></author><summary type="html"><![CDATA[&lt;!– ## Jacobi fields vanishing at a point]]></summary></entry><entry><title type="html">Pullback connections and why isometries preserve geodesics</title><link href="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/" rel="alternate" type="text/html" title="Pullback connections and why isometries preserve geodesics" /><published>2025-03-12T00:00:00+01:00</published><updated>2025-03-12T00:00:00+01:00</updated><id>/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics</id><content type="html" xml:base="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/"><![CDATA[<p>Why do isometries preserve geodesics (locally minimizing paths)? 
+$$\Rightarrow K = -1$$ -->]]></content><author><name></name></author><summary type="html"><![CDATA[We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.]]></summary></entry><entry><title type="html">Pullback connections and why isometries preserve geodesics</title><link href="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/" rel="alternate" type="text/html" title="Pullback connections and why isometries preserve geodesics" /><published>2025-03-12T00:00:00+01:00</published><updated>2025-03-12T00:00:00+01:00</updated><id>/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics</id><content type="html" xml:base="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/"><![CDATA[<p>Why do isometries preserve geodesics (locally minimizing paths)? 
 Under the isometry \(\phi:(M,g,\nabla)\to (\tilde M,\tilde g,\tilde \nabla)\), we have that \(\nabla=\phi^*\tilde\nabla\). In other words, the only Levi-Civita connection on \(M\) is the pullback connection. 
 How to prove this? The approach is to prove that the right hand side satisfies the properties of a connection on \(M\), which is torsion-free and compatible with the metric \(g\). Uniqueness of the connection on \(M\) satisfying these properties then gives \(\nabla=\phi^*\tilde\nabla\).
 These aspects can be shown entirely within the framework tensor fields, making the results automatically global. 

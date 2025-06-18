@@ -53,7 +53,7 @@ bundle add jekyll,
 
 ## Steps to deploy website update
 0. Make changes to folder /tensorFan.github.io, for example create a new post in /_posts/
-1. In terminal on the main branch, run script 
+1. In terminal in the main folder, run script 
     ./deploy_website.sh
 
 # This will do the following:

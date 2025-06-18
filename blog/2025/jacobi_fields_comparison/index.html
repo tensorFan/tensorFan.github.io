@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Home | Jacobi fields - vanishing at a point and comparison theorems</title>
+<title>Home | Jacobi fields II: connection with curvature</title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 ">
 
@@ -193,57 +193,64 @@
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Jacobi fields - vanishing at a point and comparison theorems</h1>
+    <h1 class="post-title">Jacobi fields II: connection with curvature</h1>
     <p class="post-meta">May 8, 2025</p>
   </header>
 
   <article class="post-content">
-    <!-- ## Jacobi fields vanishing at a point
+    <p>We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.</p>
 
-Let $J: [0,\pi] \to TM$ such that $J(0) = 0$.
+<h2 id="jacobi-fields-vanishing-at-a-point">Jacobi fields vanishing at a point</h2>
+
+<p>Let $J: [0,\pi] \to TM$ such that $J(0) = 0$.
 Then the geodesic variation $\Gamma(s,t) = \exp_{\sigma(s)}(tW(s))$
-has a certain form which gives a nice formula for $J$.
+has a certain form which gives a nice formula for $J$.</p>
 
-$$T_v T_p M \simeq T_p M$$
+<p>Here we shall make use of the identification
+\(T_v T_p M \simeq T_p M\)
+for $p\in M$ and $v\in T_pM$.</p>
 
+<p><img src="../assets/img/blog_posts/j2-1.png" alt="alt text" /></p>
 
-![alt text](../assets/img/blog_posts/j2-1.png) 
+<p>For the differential of a function $f:M\to N$ between manifolds we shall use the notation at each point $(df)<em>p:T_pM\to T</em>{f(p)}N$.</p>
 
-### Lemma 2 (explicit form of Jacobi fields)
+<h3 id="lemma-2-explicit-form-of-jacobi-fields">Lemma 2 (explicit form of Jacobi fields)</h3>
 
-Let $\gamma: [0,\pi] \to M$ geodesic, $p = \gamma(0)$, $v = \gamma'(0)$.
-Let $J: [0,\pi] \to TM$ Jacobi, $J(0) = 0$, $J'(0) = \frac{D}{dt}J|_{t=0} = w$
+<p>Let $\gamma: [0,1] \to M$ be a geodesic, $p = \gamma(0)$, $v = \gamma’(0)$.
+Let $J: [0,\pi] \to TM$ be a Jacobi field such that $J(0) = 0$, $J’(0) = \frac{D}{dt}J|_{t=0} = w.$</p>
 
-Then $J(t) = (d\exp_p)_{tv}(tw)$ ← only true if
+<p>Then $J(t) = (d\exp_p)_{tv}(tw).$</p>
 
-![alt text](../assets/img/blog_posts/j2-2.png) 
+<h4 id="proof">Proof</h4>
 
-#### Proof
+<p>We have $\gamma(t) = \exp_p(tv)$.
+Consider the variation $(s,t)\to \exp_p(t(v + sw))$.</p>
 
-$\gamma(t) = \exp_p(tv)$
+<p>Since each $\gamma_s := \exp_p(\cdot(v+sw))$ geodesic, it’s a geodesic variation.</p>
 
-Consider $\exp_p(t(v + sw))$
+<p><img src="../assets/img/blog_posts/j2-2.png" alt="alt text" /></p>
 
-Since each $\gamma_s := \exp_p(\cdot|v+sw|)$ geodesic, it's a geodesic variation.
+<p>Recall that the exponential map at a point $p$ is a function $\exp_p: T_pM\to M$. 
+Thus by the chain rule,
+\(J = \partial_s \exp_p(t(v+sw))|_{s=0}\)</p>
 
-$$\Rightarrow \overline{J} = \partial_s \exp_p(t(v+sw))|_{s=0}$$
+\[= (d\exp_p)_{t(v+sw)} \partial_s t(v+sw)|_{s=0}\]
 
-$$= (d\exp_p)_{t(v+sw)} \partial_s t(v+sw)|_{s=0}$$
-
-$$= (d\exp_p)_{tv}(sw), \quad \text{is Jacobi !}$$ 
+<p>\(= (d\exp_p)_{tv}(sw),\)
+is a Jacobi field.</p>
 <div style="text-align: right"> $\square$ </div>
 
----
+<hr />
 
-### Gauss Lemma
+<h3 id="gauss-lemma">Gauss Lemma</h3>
 
-Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ defined for $t \in [0,1]$
+<p>Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ defined for $t \in [0,1]$. Then,</p>
 
-$$\Rightarrow \langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle v,w \rangle, \quad w \in T_v T_p M \simeq T_p M$$
+\[\langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle v,w \rangle, \quad w \in T_v T_p M \simeq T_p M\]
 
-$$= \langle T_v \exp_p v, T_v \exp_p w \rangle$$
+\[= \langle T_v \exp_p v, T_v \exp_p w \rangle\]
 
-#### Proof
+<!-- #### Proof
 
 We know that $J(t) = (d\exp_p)_{tv}(tw): [0,1] \to TM$
 
