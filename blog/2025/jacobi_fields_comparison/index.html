@@ -212,7 +212,11 @@ for $p\in M$ and $v\in T_pM$.</p>
 
 <p><img src="/assets/img/blog_posts/j2-1.png" alt="alt text" /></p>
 
-<p>For the differential of a function $f:M\to N$ between manifolds we shall use the notation at each point $(df)<em>p:T_pM\to T</em>{f(p)}N$.</p>
+<p>For the differential of a function $f:M\to N$ between manifolds we shall use the notation</p>
+
+<p>$(df)<em>p:T_pM\to T</em>{f(p)}N$</p>
+
+<p>at each point $p\in M.$</p>
 
 <h3 id="lemma-2-explicit-form-of-jacobi-fields">Lemma 2 (explicit form of Jacobi fields)</h3>
 
@@ -246,150 +250,195 @@ Thus by the chain rule,</p>
 
 <h3 id="gauss-lemma">Gauss Lemma</h3>
 
-<p>Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ defined for $t \in [0,1]$. Then,</p>
+<p>Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ is defined for $t \in [0,1]$. Then,</p>
 
 \[\langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle v,w \rangle, \quad w \in T_v T_p M \simeq T_p M\]
 
-\[= \langle T_v \exp_p v, T_v \exp_p w \rangle\]
+<h4 id="proof-1">Proof</h4>
 
-<!-- #### Proof
+<p>We know that $J(t) = (d\exp_p)_{tv}(tw): [0,1] \to TM$</p>
 
-We know that $J(t) = (d\exp_p)_{tv}(tw): [0,1] \to TM$
+<p>is the Jacobi field along $\exp_p tv$ such that $J(0) = 0$, $J’(0) = w$.</p>
 
-is the Jacobi field along $\exp_p tv$ such that $J(0) = 0$, $J'(0) = w$.
+<p>Let $w = \lambda v + w_\perp$ such that $\langle w_\perp, v \rangle = 0$</p>
 
-Let $w = \lambda v + w_\perp$ such that $\langle w_\perp, v \rangle = 0$
+\[\Rightarrow J(t) = (d\exp_p)_{tv}(t\lambda v + tw_\perp)\]
 
-$$\Rightarrow J(t) = (d\exp_p)_{tv}(t\lambda v + tw_\perp)$$
+\[= \lambda (d\exp_p)_{tv}(tv) + (d\exp_p)_{tv}(tw_\perp)\]
 
-$$= \lambda (d\exp_p)_{tv}(tv) + (d\exp_p)_{tv}(tw_\perp)$$
+\[= \lambda t \gamma'(t) + J_\perp(t), \quad \langle J_\perp(t), \gamma'(t) \rangle = 0\]
 
-$$= \lambda t \gamma'(t) + J_\perp(t), \quad \langle J_\perp(t), \gamma'(t) \rangle = 0$$
+<p>So $\langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle \gamma’(1), J(1) \rangle$</p>
 
-So $\langle (d\exp_p)_v(v), (d\exp_p)_v(w) \rangle = \langle \gamma'(1), J(1) \rangle$
+\[= \lambda |\gamma'(1)|^2 + 0 = \lambda \quad \text{since } \gamma(t) \text{ param. arc-l.}\]
 
-$$= \lambda |\gamma'(1)|^2 + 0 = \lambda \quad \text{since } \gamma(t) \text{ param. arc-l.}$$
-
-And $\langle v,v \rangle = \lambda |v|^2 = \lambda$. 
+<p>And $\langle v,v \rangle = \lambda |v|^2 = \lambda$.</p>
 <div style="text-align: right"> $\square$ </div>
 
-Take $B = \exp_p(B_r)$ and $w \in T_p M \simeq T_v B_r$ such that $\langle w,v \rangle = 0$
+<p>Take $B = \exp_p(B_r)$ and $w \in T_p M \simeq T_v B_r$ such that $\langle w,v \rangle = 0$</p>
 
-for $v \in T_p M$ such that $|v| = 1$.
+<table>
+  <tbody>
+    <tr>
+      <td>for $v \in T_p M$ such that $</td>
+      <td>v</td>
+      <td>= 1$.</td>
+    </tr>
+  </tbody>
+</table>
 
-So $v \in S_r$ and $\gamma(t) = \exp_p(tv)$ is radial
+<p>So $v \in S_r$ and $\gamma(t) = \exp_p(tv)$ is radial</p>
 
-since $\langle \gamma'(1), J_w(1) \rangle = 0$ by Gauss Lemma.
+<p>since $\langle \gamma’(1), J_w(1) \rangle = 0$ by Gauss Lemma.</p>
 
----
+<hr />
 
-As an application to Lemma 2 we can view
-$J$ such that $J(0) = 0$ in normal coordinates $\{x^i\}_{i=1}^n$.
+<p>As an application to Lemma 2 we can view
+$J$ such that $J(0) = 0$ in normal coordinates ${x^i}_{i=1}^n$.</p>
 
-Recall $d\exp_p$ invertible (the identity) at $0$
+<p>Recall $d\exp_p$ invertible (the identity) at $0$
 $\Rightarrow$ inverse function theorem
-$\exp_p: U \to \tilde{U}$ diffeom. for $U$ sufficiently small.
+$\exp_p: U \to \tilde{U}$ diffeom. for $U$ sufficiently small.</p>
 
-On identification of $\mathbb{R}^n \simeq U$ we get essentially the
-normal chart as $\exp_p^{-1}: \tilde{U} \to \mathbb{R}^n$.
+<p>On identification of $\mathbb{R}^n \simeq U$ we get essentially the
+normal chart as $\exp_p^{-1}: \tilde{U} \to \mathbb{R}^n$.</p>
 
-Any geodesic $\gamma(t) = \exp_p(tv)$
+<p>Any geodesic $\gamma(t) = \exp_p(tv)$</p>
 
-so $\gamma(t) \sim tv = (tv^1, \ldots, tv^n)$ in $U \simeq \mathbb{R}^n$.
+<p>so $\gamma(t) \sim tv = (tv^1, \ldots, tv^n)$ in $U \simeq \mathbb{R}^n$.</p>
 
-So the variation from Lemma 2 is
+<p>So the variation from Lemma 2 is</p>
 
-$$\exp_p(t(v + sw)) \sim t(v + sw^1, \ldots, v^n + sw^n)$$
+\[\exp_p(t(v + sw)) \sim t(v + sw^1, \ldots, v^n + sw^n)\]
 
-$$\xrightarrow{\text{glue}} t(w^1, \ldots, w^n)$$
+\[\xrightarrow{\text{glue}} t(w^1, \ldots, w^n)\]
 
-$$\Rightarrow J(t) = tw^i \partial_i|_{\gamma(t)} \quad \text{on } \tilde{U} \subset M.$$
+\[\Rightarrow J(t) = tw^i \partial_i|_{\gamma(t)} \quad \text{on } \tilde{U} \subset M.\]
 
-### Corollary
+<h3 id="corollary">Corollary</h3>
 
-Every $w \in T_q M$ geodesic is the value of a Jacobi field $J$
-along a radial geodesic $\gamma$ such that $J(0) = 0$, $\gamma(0) = p$.
+<p>Every $w \in T_q M$ geodesic is the value of a Jacobi field $J$
+along a radial geodesic $\gamma$ such that $J(0) = 0$, $\gamma(0) = p$.</p>
 
-**Proof:** Let $\gamma(t) = (tq^1, \ldots, tq^n)$ such that $\gamma(0) = p$, $\gamma(1) = q$.
+<p><strong>Proof:</strong> Let $\gamma(t) = (tq^1, \ldots, tq^n)$ such that $\gamma(0) = p$, $\gamma(1) = q$.</p>
 
-$J(t) = (tw^1, \ldots, tw^n) = \partial_s t(q^1 + sw^1, \ldots, q^n + sw^n)|_{s=0}$
+<table>
+  <tbody>
+    <tr>
+      <td>$J(t) = (tw^1, \ldots, tw^n) = \partial_s t(q^1 + sw^1, \ldots, q^n + sw^n)</td>
+      <td>_{s=0}$</td>
+    </tr>
+  </tbody>
+</table>
 
-with $J(0) = 0$, $J(1) = w$. <div style="text-align: right"> $\square$ </div>
+<p>with $J(0) = 0$, $J(1) = w$. &lt;div style="text-align: right"&gt; $\square$ &lt;/div&gt;</p>
 
----
+<hr />
 
-### Proposition 2 (Curvature and spread of geodesics)
+<h3 id="proposition-2-curvature-and-spread-of-geodesics">Proposition 2 (Curvature and spread of geodesics)</h3>
 
-Let $\gamma, J$ as Lemma 2. Set $|w| = 1$.
+<table>
+  <tbody>
+    <tr>
+      <td>Let $\gamma, J$ as Lemma 2. Set $</td>
+      <td>w</td>
+      <td>= 1$.</td>
+    </tr>
+  </tbody>
+</table>
 
-$$\Rightarrow |J(t)|^2 = s^2 - \frac{1}{3}sR(v,w)v,w \rangle s^4 + R(s), \quad s \ll a$$
+\[\Rightarrow |J(t)|^2 = s^2 - \frac{1}{3}sR(v,w)v,w \rangle s^4 + R(s), \quad s \ll a\]
 
-where $\frac{R(s)}{s^4} \to 0$. (So $R(s) \sim O(s^5)$)
+<p>where $\frac{R(s)}{s^4} \to 0$. (So $R(s) \sim O(s^5)$)</p>
 
-#### Proof
+<h4 id="proof-2">Proof</h4>
 
-$|J|^2 = \langle J, J \rangle \in \mathbb{R}$ so Taylor expansion around $0$:
+<table>
+  <tbody>
+    <tr>
+      <td>$</td>
+      <td>J</td>
+      <td>^2 = \langle J, J \rangle \in \mathbb{R}$ so Taylor expansion around $0$:</td>
+    </tr>
+  </tbody>
+</table>
 
-*assumed in one chart ?*
+<p><em>assumed in one chart ?</em></p>
 
-$$\langle J(s), J(s) \rangle = \langle J(0), J(0) \rangle + s \frac{d}{ds} \langle J,J \rangle|_{s=0} + s^2 \frac{d^2}{ds^2} \langle J,J \rangle|_{s=0}$$
+\[\langle J(s), J(s) \rangle = \langle J(0), J(0) \rangle + s \frac{d}{ds} \langle J,J \rangle|_{s=0} + s^2 \frac{d^2}{ds^2} \langle J,J \rangle|_{s=0}\]
 
-$$+ s^3 \frac{d^3}{ds^3} \langle J,J \rangle|_{s=0} + s^4 \frac{d^4}{ds^4} \langle J,J \rangle|_{s=0} + O(s^5)$$
+\[+ s^3 \frac{d^3}{ds^3} \langle J,J \rangle|_{s=0} + s^4 \frac{d^4}{ds^4} \langle J,J \rangle|_{s=0} + O(s^5)\]
 
-$$\langle J(0), J(0) \rangle = 0$$
+\[\langle J(0), J(0) \rangle = 0\]
 
-$$\frac{d}{ds} \langle J,J \rangle = \langle J', J \rangle + \langle J, J' \rangle = 2 \langle J', J \rangle|_{s=0} = 0$$
+\[\frac{d}{ds} \langle J,J \rangle = \langle J', J \rangle + \langle J, J' \rangle = 2 \langle J', J \rangle|_{s=0} = 0\]
 
-$$|w| = 1$$
+\[|w| = 1\]
 
-$$\frac{d^2}{ds^2} \langle J,J \rangle = 2 \frac{d}{ds} \langle J, J' \rangle = 2 \langle J', J' \rangle + 2 \langle J, J'' \rangle|_{s=0} = 2$$
+\[\frac{d^2}{ds^2} \langle J,J \rangle = 2 \frac{d}{ds} \langle J, J' \rangle = 2 \langle J', J' \rangle + 2 \langle J, J'' \rangle|_{s=0} = 2\]
 
-$$\frac{d^3}{ds^3} \langle J,J \rangle = 4 \langle J'', J' \rangle + 2 \langle J', J'' \rangle + 2 \langle J, J''' \rangle$$
+\[\frac{d^3}{ds^3} \langle J,J \rangle = 4 \langle J'', J' \rangle + 2 \langle J', J'' \rangle + 2 \langle J, J''' \rangle\]
 
-$$= 6 \langle J'', J' \rangle + 2 \langle J, J''' \rangle|_{s=0}$$
+\[= 6 \langle J'', J' \rangle + 2 \langle J, J''' \rangle|_{s=0}\]
 
-$$= -R(J,\gamma')\gamma'$$
+\[= -R(J,\gamma')\gamma'\]
 
-$$= -6 \langle R(0,v)v, w \rangle = 0 \quad J(0) = 0$$
+\[= -6 \langle R(0,v)v, w \rangle = 0 \quad J(0) = 0\]
 
-$$\frac{d^4}{ds^4} \langle J,J \rangle = 6 \langle J''', J' \rangle + 6 \langle J'', J'' \rangle + 2 \langle J', J''' \rangle + 2 \langle J,J^{iv} \rangle$$
+\[\frac{d^4}{ds^4} \langle J,J \rangle = 6 \langle J''', J' \rangle + 6 \langle J'', J'' \rangle + 2 \langle J', J''' \rangle + 2 \langle J,J^{iv} \rangle\]
 
-$$= -8 \langle \frac{D}{ds} R(J,\gamma')\gamma', J' \rangle_{s=0} = -8 \langle R(w,v)v, w \rangle$$
+\[= -8 \langle \frac{D}{ds} R(J,\gamma')\gamma', J' \rangle_{s=0} = -8 \langle R(w,v)v, w \rangle\]
 
-$$\frac{D}{ds} R(J,\gamma')\gamma' = (\nabla_R)(J,\gamma')\gamma' + R(J',\gamma')\gamma' + R(J,\gamma'')\gamma' + R(J,\gamma')\gamma''$$ 
+\[\frac{D}{ds} R(J,\gamma')\gamma' = (\nabla_R)(J,\gamma')\gamma' + R(J',\gamma')\gamma' + R(J,\gamma'')\gamma' + R(J,\gamma')\gamma''\]
 
 <div style="text-align: right"> $\square$ </div>
 
----
+<hr />
 
-## Application: curvature of $S^n$, $H^n$
+<h2 id="application-curvature-of-sn-hn">Application: curvature of $S^n$, $H^n$</h2>
 
-### $S^n$
-$\gamma(t) = \cos t x + \sin t v$ geodesic $|x| = |v| = 1$.
+<h3 id="sn">$S^n$</h3>
+<p>$\gamma(t) = \cos t x + \sin t v$ geodesic $|x| = |v| = 1$.</p>
 
-$J(0) = 0$, $J'(0) =: w \perp v$ such that $|w| = 1$, $w \perp x$.
+<table>
+  <tbody>
+    <tr>
+      <td>$J(0) = 0$, $J’(0) =: w \perp v$ such that $</td>
+      <td>w</td>
+      <td>= 1$, $w \perp x$.</td>
+    </tr>
+  </tbody>
+</table>
 
-By uniqueness $J(t) = \sin t w$
+<p>By uniqueness $J(t) = \sin t w$</p>
 
-$|J(t)|^2 = \sin^2 t = t^2 - \frac{t^4}{3} + O(t^5)$
+<table>
+  <tbody>
+    <tr>
+      <td>$</td>
+      <td>J(t)</td>
+      <td>^2 = \sin^2 t = t^2 - \frac{t^4}{3} + O(t^5)$</td>
+    </tr>
+  </tbody>
+</table>
 
-**Prop 2**
-$= t^2 - \frac{t^4}{3}\langle R(v,w)v, w \rangle + O(t^5)$
+<p><strong>Prop 2</strong>
+$= t^2 - \frac{t^4}{3}\langle R(v,w)v, w \rangle + O(t^5)$</p>
 
-$$\Rightarrow \langle R(v,w)v, w \rangle = 1 \quad \text{and } K = \langle R(v,w)v, w \rangle$$
+\[\Rightarrow \langle R(v,w)v, w \rangle = 1 \quad \text{and } K = \langle R(v,w)v, w \rangle\]
 
-$$\frac{\langle v,v \rangle \langle w,w \rangle - \langle v,w \rangle^2}{?}$$
+\[\frac{\langle v,v \rangle \langle w,w \rangle - \langle v,w \rangle^2}{?}\]
 
-So sectional curvature always $= 1$ since $v,w$ arbitrary.
+<p>So sectional curvature always $= 1$ since $v,w$ arbitrary.</p>
 
-### $H^n$
-$\gamma(t) = \cosh t x + \sinh t v$ geodesic $|x| = |v| = 1$
+<h3 id="hn">$H^n$</h3>
+<p>$\gamma(t) = \cosh t x + \sinh t v$ geodesic $|x| = |v| = 1$</p>
 
-$J(t) = \sinh t w$, $w \perp v$
+<p>$J(t) = \sinh t w$, $w \perp v$</p>
 
-$\sinh t = t^2 + \frac{t^4}{3} + O(t^5)$
+<p>$\sinh t = t^2 + \frac{t^4}{3} + O(t^5)$</p>
 
-$$\Rightarrow K = -1$$ -->
+\[\Rightarrow K = -1\]
 
   </article>
 
