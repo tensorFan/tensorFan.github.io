@@ -1,16 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-06-19T14:54:41+02:00</updated><id>/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
-</subtitle><entry><title type="html">Jacobi fields I</title><link href="/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Jacobi fields I" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi-fields</id><content type="html" xml:base="/blog/2025/jacobi-fields/"><![CDATA[<p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-06-23T18:54:38+02:00</updated><id>/feed.xml</id><title type="html">Home</title><subtitle>A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+</subtitle><entry><title type="html">Jacobi fields I - geodesic variations</title><link href="/blog/2025/jacobi-fields/" rel="alternate" type="text/html" title="Jacobi fields I - geodesic variations" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi-fields</id><content type="html" xml:base="/blog/2025/jacobi-fields/"><![CDATA[<p>In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.</p>
 
 <p>Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote the Riemann curvature tensor by $R$, defined by 
 \(R(X,Y)Z := D_XD_YZ-D_YD_XZ-D_{[X,Y]}Z\)
-for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$. We start by going over some preliminaries.</p>
+for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$, each of which being $C^{\infty}(M)$ functions. 
+We start by going over some preliminaries.</p>
 
+<hr />
 <h2 id="technical-preliminaries">Technical preliminaries</h2>
 
-<p>Let $\Gamma: (-\varepsilon, \varepsilon) \times [0, T] \to M$ be a smooth variation of the smooth curve $\gamma: [0, T] \to M$. It is a local parametrization of $M$. Denote by</p>
+<p>Let $\Gamma: (-\varepsilon, \varepsilon) \times [0, T] \to M$ be a smooth variation of the smooth curve $\gamma: [0, T] \to M$. It is a local parametrization of a subset of $M$. Denote by</p>
 
 \[\Gamma_s (t) := \Gamma(s, t),\ \Gamma^t (s) := \Gamma(s, t)\\
-T := \partial_t \Gamma,\ S := \partial_s \Gamma,\ V := S|_{s=0}.\]
+T := \partial_t \Gamma,\\
+S := \partial_s \Gamma,\ V := S|_{s=0}.\]
 
 <p>Here $V:[0,T]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
 This implies</p>
@@ -28,9 +31,10 @@ R(S,T)V &amp;= D_SD_TV-D_TD_SV-D_{[S,T]}V \\
 
 <!-- [*Diagram showing main curves with x and y axes, with points marked*] -->
 
+<hr />
 <h2 id="geodesic-variations">Geodesic variations</h2>
 
-<p>Let all curves $\Gamma_s$ for fixed $s$ be geodesics. Then $\frac{D}{dt}T=0$.
+<p>Let all curves $\Gamma_s$, for fixed $s$, be geodesics. Then $\frac{D}{dt}T=0$.
 We have:</p>
 
 \[\frac{D}{dt}\frac{D}{dt}S = \frac{D}{dt}\frac{D}{ds}T = \frac{D}{ds}\frac{D}{dt}T - R(S, T)T = R(S, T)T\]
@@ -49,9 +53,9 @@ We have:</p>
 
 \[I(V, W) := -\int_0^T \langle V, W'' + R(W, \gamma')\gamma' \rangle dt \quad\]
 
-<p>is degenerate if $W$ Jacobi field. $(V, W \text{ always proper})$</p>
+<p>is degenerate if $W$ Jacobi field. (Here $V, W$ are always proper.)</p>
 
-<h3 id="theorem-1">Theorem 1</h3>
+<h4 id="theorem-1">Theorem 1</h4>
 
 <p>Every Jacobi field $V$ along geodesic $\gamma$ is the variation field of a geodesic variation of $\gamma$.</p>
 
@@ -87,29 +91,34 @@ is Jacobi.</p>
 
 <div style="text-align: right"> $\square$ </div>
 
-<h3 id="lemma-1">Lemma 1</h3>
+<h4 id="lemma-1">Lemma 1</h4>
 
-<p>$\forall \xi, \eta \in T_{\gamma(0)}M \quad \exists! J :[0,T]\to TM$ such that</p>
+<p>For all $\xi, \eta \in T_{\gamma(0)}M$ there exists a unique $J :[0,T]\to TM$ such that</p>
 
-\[\begin{cases} J'' + R(J, \gamma')\gamma' = 0 \\ J(0) = \xi, \frac{D}{dt}J(0) = \eta \end{cases}\]
+\[\begin{cases} 
+J'' + R(J, \gamma')\gamma' = 0 \\ J(0) = \xi,\\ \frac{D}{dt}J(0) = \eta 
+\end{cases}\]
 
 <h4 id="proof-sketch">Proof sketch</h4>
 
 <p>Choose parallel orthonormal frame along $\gamma$, so that 
 $J(t) = J^k(t) E_k.$</p>
 
-\[\Rightarrow \begin{cases} \dot{J}^i =: V^i \\ \dot{V}^i = -R_{jkl}^i J^j \gamma'^k \gamma'^l \end{cases}\]
+<p>The system</p>
 
-<p>has a unique solution by Picard-Lindelöf Theorem. $\square$</p>
+\[\begin{cases} \dot{J}^i =: V^i \\ \dot{V}^i = -R_{jkl}^i J^j \gamma'^k \gamma'^l \end{cases}\]
 
-<h2 id="consequences">Consequences:</h2>
+<p>has a unique solution by Picard-Lindelöf Theorem.</p>
+<div style="text-align: right"> $\square$ </div>
+
+<hr />
+<h2 id="consequences">Consequences</h2>
 <p>The space of vector fields along $\gamma$ satisfies the isomorphism $\Gamma(T\gamma) \simeq T_{\gamma(0)}M \oplus T_{\gamma(0)}M$ so $\dim\Gamma(T\gamma) = 2n$.</p>
 
-<p>Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations,</p>
+<p>Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations of the geodesic $\gamma$.</p>
 
-<p>So the interesting Jacobi fields are $2n-2$ many.</p>
-
-<p>These are precisely the normal Jacobi fields.</p>
+<p>So the “interesting” Jacobi fields are $2n-2$ many. 
+These are precisely the normal Jacobi fields.</p>
 
 <p>Recall $I(V, V) = -\int_0^T \langle V, V’’ + R(V, \gamma’)\gamma’ \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
 $V$ is a proper normal vector field along the geodesic $\gamma$.</p>
@@ -120,15 +129,15 @@ $V$ is a proper normal vector field along the geodesic $\gamma$.</p>
 
 <p>The normal Jacobi fields with vanishing ends are precisely those satisfying $I(V, V) = 0$. They are $n-1$ many.</p>
 
-<h3 id="proposition-1-normal-and-tangential-jacobi-fields">Proposition 1 (normal and tangential Jacobi fields)</h3>
+<h4 id="proposition-1-normal-and-tangential-jacobi-fields">Proposition 1 (normal and tangential Jacobi fields)</h4>
 
-<p>A Jacobi field $J(t)$ remains tangential/normal:</p>
+<p>A Jacobi field $J(t)$ remains tangential/normal. Namely, for $t \in [0, T],$ we have the equivalences:</p>
 
 <p>i) $J(t) = \lambda t \gamma’(t) \Leftrightarrow J(0) = 0, J’(0) = \lambda \gamma’(0)$</p>
 
 <p>Also in this case $J’’ = 0.$</p>
 
-<p>ii) $J(0), J’(0) \perp \gamma’(0) \Leftrightarrow J(t) \perp \gamma’(t) \forall t \in [0, T]$.</p>
+<p>ii) $J(t) \perp \gamma’(t)$. \Leftrightarrow $J(0), J’(0) \perp \gamma’(0)$</p>
 
 <h4 id="proof-1">Proof</h4>
 
@@ -141,10 +150,11 @@ Clearly $J’’ = 0$ since $\gamma$ is a geodesic.</p>
 
 <p>Since $J’’ = -R(J, \gamma’)\gamma’$, we have $\langle J, \gamma’\rangle’’ = -\langle R(J, \gamma’)\gamma’, \gamma’ \rangle = 0$ by the properties of the Riemann curvature. Using the assumption $J(0) \perp \gamma’(0)$ and $J’(0) \perp \gamma’(0)$ we conclude</p>
 
-<p>\(\Rightarrow \begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}\)
+<p>\(\begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}\)
 <!-- $\square$ --></p>
-<div style="text-align: right"> $\square$ </div>]]></content><author><name></name></author><summary type="html"><![CDATA[In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.]]></summary></entry><entry><title type="html">Jacobi fields II: connection with curvature</title><link href="/blog/2025/jacobi_fields_comparison/" rel="alternate" type="text/html" title="Jacobi fields II: connection with curvature" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi_fields_comparison</id><content type="html" xml:base="/blog/2025/jacobi_fields_comparison/"><![CDATA[<p>We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.</p>
+<div style="text-align: right"> $\square$ </div>]]></content><author><name></name></author><summary type="html"><![CDATA[In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.]]></summary></entry><entry><title type="html">Jacobi fields II - curvature</title><link href="/blog/2025/jacobi_fields_explicit/" rel="alternate" type="text/html" title="Jacobi fields II - curvature" /><published>2025-05-08T00:00:00+02:00</published><updated>2025-05-08T00:00:00+02:00</updated><id>/blog/2025/jacobi_fields_explicit</id><content type="html" xml:base="/blog/2025/jacobi_fields_explicit/"><![CDATA[<p>We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.</p>
 
+<hr />
 <h2 id="jacobi-fields-vanishing-at-a-point">Jacobi fields vanishing at a point</h2>
 
 <p>Let $J: [0,\pi] \to TM$ such that $J(0) = 0$.
@@ -155,7 +165,7 @@ has a certain form which gives a nice formula for $J$.</p>
 \(T_v T_p M \simeq T_p M\)
 for $p\in M$ and $v\in T_pM$.</p>
 
-<p><img src="/assets/img/blog_posts/j2-1.png" alt="alt text" /></p>
+<p><img src="/assets/img/blog_posts/j2-1.png" alt="Diagram showing geodesic variation" /></p>
 
 <p>For the differential of a function $f:M\to N$ between manifolds we shall use the notation</p>
 
@@ -163,7 +173,7 @@ for $p\in M$ and $v\in T_pM$.</p>
 
 <p>at each point $p\in M.$</p>
 
-<h3 id="lemma-2-explicit-form-of-jacobi-fields">Lemma 2 (explicit form of Jacobi fields)</h3>
+<h4 id="lemma-2-explicit-form-of-zero-start-jacobi-fields">Lemma 2 (explicit form of zero-start Jacobi fields)</h4>
 
 <p>Let $\gamma: [0,1] \to M$ be a geodesic, $p = \gamma(0)$, $v = \gamma’(0)$.
 Let $J: [0,\pi] \to TM$ be a Jacobi field such that $J(0) = 0$, $J’(0) = \frac{D}{dt}J|_{t=0} = w.$</p>
@@ -177,29 +187,28 @@ Consider the variation $(s,t)\to \exp_p(t(v + sw))$.</p>
 
 <p>Since each $\gamma_s := \exp_p(\cdot(v+sw))$ geodesic, it’s a geodesic variation.</p>
 
-<p><img src="/assets/img/blog_posts/j2-2.png" alt="alt text" /></p>
+<p><img src="/assets/img/blog_posts/j2-2.png" alt="Diagram showing exponential map variation" /></p>
 
 <p>Recall that the exponential map at a point $p$ is a function $\exp_p: T_pM\to M$. 
 Thus by the chain rule,</p>
 
 \[\begin{align*}
 J &amp;= \partial_s \exp_p(t(v+sw))|_{s=0}\\
-
 &amp;= (d\exp_p)_{t(v+sw)} \partial_s t(v+sw)|_{s=0}\\
-
 &amp;= (d\exp_p)_{tv}(sw),
 \end{align*}\]
 
 <p>is a Jacobi field.</p>
+
 <div style="text-align: right"> $\square$ </div>
 
 <hr />
 
-<p>By our identification $T_vT_pM\eqsim T_pM$, the differential of the exponential map maps as follows.</p>
+<p>By our identification $T_vT_pM\simeq T_pM$, the differential of the exponential map maps as follows.</p>
 
 \[(d\exp_p)_v: T_pM \to T_{\exp_p(v)}M.\]
 
-<h3 id="gauss-lemma">Gauss Lemma</h3>
+<h4 id="gauss-lemma">Gauss Lemma</h4>
 
 <p>Let $p \in M$, $v \in T_p M$ such that $\exp_p tv =: \gamma(t)$ is defined for $t \in [0,1]$. Then,</p>
 
@@ -213,17 +222,24 @@ J &amp;= \partial_s \exp_p(t(v+sw))|_{s=0}\\
 
 <p>The tangential Jacobi field such that $J(0) = 0$, $J’(0)=v$ is simply $t\gamma’(t)$. This is since the Jacobi equation reduces to $J’‘=0$ since $R(J,\gamma’)\gamma’=0$ by the symmetries of the Riemann curvature.</p>
 
-<p>Let $T_pM\ni w = \lambda v + w_\perp$ such that $\langle w_\perp, v \rangle = 0.$ Then by linearity of the differential,</p>
+<p>Let $T_pM\ni w = \lambda v + w_\perp$ such that $\langle w_\perp, v \rangle = 0.$ 
+First, notice</p>
+
+\[\langle v,w \rangle = \lambda |v|^2 = \lambda.\]
+
+<p>By linearity of the differential,</p>
 
 \[\begin{align*}
 J(t) &amp;= (d\exp_p)_{tv}(t\lambda v + tw_\perp)\\
-
 &amp;= \lambda (d\exp_p)_{tv}(tv) + (d\exp_p)_{tv}(tw_\perp)\\
-
 &amp;= \lambda t \gamma'(t) + J_\perp(t), 
 \end{align*}\]
 
-<p>where $J_\perp(t):=(d\exp_p)<em>{tv}(tw</em>\perp)$ is the perpetually normal Jacobi field such that $\langle J_\perp(t), \gamma’(t) \rangle = 0$. Remember Proposition 1 from the previous note.</p>
+<p>where 
+\(J_\perp(t):=(d\exp_p)_{tv}(tw_\perp)\) 
+is the perpetually normal Jacobi field such that 
+$\langle J_\perp(t), \gamma’(t) \rangle = 0.$ 
+Remember Proposition 1 from the previous note.</p>
 
 <p>So</p>
 
@@ -235,125 +251,27 @@ J(t) &amp;= (d\exp_p)_{tv}(t\lambda v + tw_\perp)\\
 
 <p>since $\gamma$ is parametrised by arclength (i.e. unit speed).</p>
 
-<p>And $\langle v,v \rangle = \lambda |v|^2 = \lambda$.</p>
 <div style="text-align: right"> $\square$ </div>
 
-<p>Take $r&gt;0$ small enough so that $B = \exp_p(B_r)$ is the geodesic ball ($B$ and the ball of radius $r$ in the tangent space are diffeomorphic) and pick $w \in T_p M \simeq T_v B_r$ such that $\langle w,v \rangle = 0$,
-for $v \in T_p M$ such that $|v| = 1$.</p>
+<p>Take $r&gt;0$ small enough so that $B := \exp_p(B_r)$ is the geodesic ball ($B$ and the ball of radius $r$ in the tangent space are diffeomorphic.) 
+We denote by $S_r$ the sphere $\partial B_r.$ 
+A vector $v\in S_r$, is such that $v\in T_pM$ with length $|v|=r$.</p>
 
-<p>So $v \in S_r$ and $\gamma(t) = \exp_p(tv)$ is radial</p>
+<p>Since the exponential map is a diffeomorphism around $B_r$, we have that 
+\(S := \partial B = \{q\in M : d(p,q)=r\} = \exp_p(S_r).\)
+Indeed, $\exp_p(v)$ is the point which you reach by traveling along the geodesic starting at $p$ in the direction $v$ for a length $|v|$. 
+Geodesics $\exp_p(tv)$ are thus called radial.</p>
 
-<p>since $\langle \gamma’(1), J_w(1) \rangle = 0$ by Gauss Lemma.</p>
+<p>Take a vector $v\in S_r$ such that $|v|=r$. 
+Pick a tangent vector to the sphere $w \in T_v S_r \simeq T_p M$ such that $\langle w,v \rangle = 0$.</p>
 
-<!-- ---
+<p>Let $\gamma(t) = \exp_p(tv)$ be the radial geodesic of $v$. 
+Let $J_w(1)$ denote the Jacobi field $(d\exp_p)_{tv}(tw): [0,1] \to TM.$ 
+Then by the Gauss Lemma, $\langle \gamma’(1), J_w(1) \rangle = 0$.</p>
 
-As an application to Lemma 2 we can view
-$J$ such that $J(0) = 0$ in normal coordinates $\{x^i\}_{i=1}^n$.
+<p>We have that $\gamma’(1)$ is tangent to the radial geodesic at $\exp_p(v)$. Therefore, $J_w(1)$ is tangent to the hypersurface orthogonal to that radial direction — i.e., it’s tangent to the geodesic sphere $S$ at $\exp_p(v).$</p>
 
-Recall $d\exp_p$ invertible (the identity) at $0$
-$\Rightarrow$ inverse function theorem
-$\exp_p: U \to \tilde{U}$ diffeom. for $U$ sufficiently small.
-
-On identification of $\mathbb{R}^n \simeq U$ we get essentially the
-normal chart as $\exp_p^{-1}: \tilde{U} \to \mathbb{R}^n$.
-
-Any geodesic $\gamma(t) = \exp_p(tv)$
-
-so $\gamma(t) \sim tv = (tv^1, \ldots, tv^n)$ in $U \simeq \mathbb{R}^n$.
-
-So the variation from Lemma 2 is
-
-$$\exp_p(t(v + sw)) \sim t(v + sw^1, \ldots, v^n + sw^n)$$
-
-$$\xrightarrow{\text{glue}} t(w^1, \ldots, w^n)$$
-
-$$\Rightarrow J(t) = tw^i \partial_i|_{\gamma(t)} \quad \text{on } \tilde{U} \subset M.$$
-
-### Corollary
-
-Every $w \in T_q M$ geodesic is the value of a Jacobi field $J$
-along a radial geodesic $\gamma$ such that $J(0) = 0$, $\gamma(0) = p$.
-
-**Proof:** Let $\gamma(t) = (tq^1, \ldots, tq^n)$ such that $\gamma(0) = p$, $\gamma(1) = q$.
-
-$J(t) = (tw^1, \ldots, tw^n) = \partial_s t(q^1 + sw^1, \ldots, q^n + sw^n)|_{s=0}$
-
-with $J(0) = 0$, $J(1) = w$. <div style="text-align: right"> $\square$ </div>
-
----
-
-### Proposition 2 (Curvature and spread of geodesics)
-
-Let $\gamma, J$ as Lemma 2. Set $|w| = 1$.
-
-$$\Rightarrow |J(t)|^2 = s^2 - \frac{1}{3}sR(v,w)v,w \rangle s^4 + R(s), \quad s \ll a$$
-
-where $\frac{R(s)}{s^4} \to 0$. (So $R(s) \sim O(s^5)$)
-
-#### Proof
-
-$|J|^2 = \langle J, J \rangle \in \mathbb{R}$ so Taylor expansion around $0$:
-
-*assumed in one chart ?*
-
-$$\langle J(s), J(s) \rangle = \langle J(0), J(0) \rangle + s \frac{d}{ds} \langle J,J \rangle|_{s=0} + s^2 \frac{d^2}{ds^2} \langle J,J \rangle|_{s=0}$$
-
-$$+ s^3 \frac{d^3}{ds^3} \langle J,J \rangle|_{s=0} + s^4 \frac{d^4}{ds^4} \langle J,J \rangle|_{s=0} + O(s^5)$$
-
-$$\langle J(0), J(0) \rangle = 0$$
-
-$$\frac{d}{ds} \langle J,J \rangle = \langle J', J \rangle + \langle J, J' \rangle = 2 \langle J', J \rangle|_{s=0} = 0$$
-
-$$|w| = 1$$
-
-$$\frac{d^2}{ds^2} \langle J,J \rangle = 2 \frac{d}{ds} \langle J, J' \rangle = 2 \langle J', J' \rangle + 2 \langle J, J'' \rangle|_{s=0} = 2$$
-
-$$\frac{d^3}{ds^3} \langle J,J \rangle = 4 \langle J'', J' \rangle + 2 \langle J', J'' \rangle + 2 \langle J, J''' \rangle$$
-
-$$= 6 \langle J'', J' \rangle + 2 \langle J, J''' \rangle|_{s=0}$$
-
-$$= -R(J,\gamma')\gamma'$$
-
-$$= -6 \langle R(0,v)v, w \rangle = 0 \quad J(0) = 0$$
-
-$$\frac{d^4}{ds^4} \langle J,J \rangle = 6 \langle J''', J' \rangle + 6 \langle J'', J'' \rangle + 2 \langle J', J''' \rangle + 2 \langle J,J^{iv} \rangle$$
-
-$$= -8 \langle \frac{D}{ds} R(J,\gamma')\gamma', J' \rangle_{s=0} = -8 \langle R(w,v)v, w \rangle$$
-
-$$\frac{D}{ds} R(J,\gamma')\gamma' = (\nabla_R)(J,\gamma')\gamma' + R(J',\gamma')\gamma' + R(J,\gamma'')\gamma' + R(J,\gamma')\gamma''$$ 
-
-<div style="text-align: right"> $\square$ </div>
-
----
-
-## Application: curvature of $S^n$, $H^n$
-
-### $S^n$
-$\gamma(t) = \cos t x + \sin t v$ geodesic $|x| = |v| = 1$.
-
-$J(0) = 0$, $J'(0) =: w \perp v$ such that $|w| = 1$, $w \perp x$.
-
-By uniqueness $J(t) = \sin t w$
-
-$|J(t)|^2 = \sin^2 t = t^2 - \frac{t^4}{3} + O(t^5)$
-
-**Prop 2**
-$= t^2 - \frac{t^4}{3}\langle R(v,w)v, w \rangle + O(t^5)$
-
-$$\Rightarrow \langle R(v,w)v, w \rangle = 1 \quad \text{and } K = \langle R(v,w)v, w \rangle$$
-
-$$\frac{\langle v,v \rangle \langle w,w \rangle - \langle v,w \rangle^2}{?}$$
-
-So sectional curvature always $= 1$ since $v,w$ arbitrary.
-
-### $H^n$
-$\gamma(t) = \cosh t x + \sinh t v$ geodesic $|x| = |v| = 1$
-
-$J(t) = \sinh t w$, $w \perp v$
-
-$\sinh t = t^2 + \frac{t^4}{3} + O(t^5)$
-
-$$\Rightarrow K = -1$$ -->]]></content><author><name></name></author><summary type="html"><![CDATA[We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.]]></summary></entry><entry><title type="html">Pullback connections and why isometries preserve geodesics</title><link href="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/" rel="alternate" type="text/html" title="Pullback connections and why isometries preserve geodesics" /><published>2025-03-12T00:00:00+01:00</published><updated>2025-03-12T00:00:00+01:00</updated><id>/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics</id><content type="html" xml:base="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/"><![CDATA[<p>Why do isometries preserve geodesics (locally minimizing paths)? 
+<p>In other words, the geodesic sphere is a hypersurface orthogonal to the radial geodesics starting from $p$.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.]]></summary></entry><entry><title type="html">Pullback connections and why isometries preserve geodesics</title><link href="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/" rel="alternate" type="text/html" title="Pullback connections and why isometries preserve geodesics" /><published>2025-03-12T00:00:00+01:00</published><updated>2025-03-12T00:00:00+01:00</updated><id>/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics</id><content type="html" xml:base="/blog/2025/pullback-connections-and-why-isometries-preserve-geodesics/"><![CDATA[<p>Why do isometries preserve geodesics (locally minimizing paths)? 
 Under the isometry \(\phi:(M,g,\nabla)\to (\tilde M,\tilde g,\tilde \nabla)\), we have that \(\nabla=\phi^*\tilde\nabla\). In other words, the only Levi-Civita connection on \(M\) is the pullback connection. 
 How to prove this? The approach is to prove that the right hand side satisfies the properties of a connection on \(M\), which is torsion-free and compatible with the metric \(g\). Uniqueness of the connection on \(M\) satisfying these properties then gives \(\nabla=\phi^*\tilde\nabla\).
 These aspects can be shown entirely within the framework tensor fields, making the results automatically global. 
