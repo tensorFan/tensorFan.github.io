@@ -1,0 +1,15 @@
+# Installed Ruby gems
+vendor/
+.bundle/
+
+# Generated Jekyll website
+_site/
+
+# Jekyll caches
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Windows
+Thumbs.db
+Desktop.ini
