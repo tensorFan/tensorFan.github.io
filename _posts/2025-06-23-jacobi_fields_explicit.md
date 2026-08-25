@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Jacobi fields II - curvature"
-date:   2025-05-08
+date:   2025-06-23
 ---
 
 We continue our study of Jacobi fields. We get a closed form expression for Jacobi fields vanishing at a point, and make a connection with curvature.
