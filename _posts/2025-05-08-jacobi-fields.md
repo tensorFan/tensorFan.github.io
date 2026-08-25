@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Jacobi fields I"
+title:  "Jacobi fields I - geodesic variations"
 date:   2025-05-08
 ---
 In these notes we will investigate some interesting properties of Riemannian manifolds, using Jacobi fields as the main technical tool. The numbering of results in these notes will be externally consistent, so we might refer back to Proposition 1, which is written in this note, in the next note.
@@ -9,15 +9,18 @@ Let $(M, g)$ be a Riemannian manifold with Levi-Civita connection $D$. We denote
 $$
 R(X,Y)Z := D_XD_YZ-D_YD_XZ-D_{[X,Y]}Z
 $$
-for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$. We start by going over some preliminaries.
+for vector fields $X,Y,Z : M\to TM$. We will write the inner product of two vector fields with respect to the metric as $\langle X,Y \rangle$, and norm by $|X|$, each of which being $C^{\infty}(M)$ functions. 
+We start by going over some preliminaries.
 
+---
 ## Technical preliminaries
 
-Let $\Gamma: (-\varepsilon, \varepsilon) \times [0, T] \to M$ be a smooth variation of the smooth curve $\gamma: [0, T] \to M$. It is a local parametrization of $M$. Denote by 
+Let $\Gamma: (-\varepsilon, \varepsilon) \times [0, T] \to M$ be a smooth variation of the smooth curve $\gamma: [0, T] \to M$. It is a local parametrization of a subset of $M$. Denote by 
 
 $$
 \Gamma_s (t) := \Gamma(s, t),\ \Gamma^t (s) := \Gamma(s, t)\\
-T := \partial_t \Gamma,\ S := \partial_s \Gamma,\ V := S|_{s=0}.
+T := \partial_t \Gamma,\\
+S := \partial_s \Gamma,\ V := S|_{s=0}.
 $$
 
 Here $V:[0,T]\to TM$ is called a smooth variation field. Note that we have $T = T_{(s,t)}\Gamma \partial_t$ and $S = T_{(s,t)}\Gamma \partial_s$ via the tangent map $T_{s,t}: T_{(s,t)}\mathbb{R}^2\to T_{\Gamma(s,t)}M.$ 
@@ -40,9 +43,10 @@ Lastly, one can check that $\frac{D}{dt}S = \frac{D}{ds}T$. This is called the s
 
 <!-- [*Diagram showing main curves with x and y axes, with points marked*] -->
 
+---
 ## Geodesic variations
 
-Let all curves $\Gamma_s$ for fixed $s$ be geodesics. Then $\frac{D}{dt}T=0$.
+Let all curves $\Gamma_s$, for fixed $s$, be geodesics. Then $\frac{D}{dt}T=0$.
 We have:
 
 $$
@@ -67,9 +71,9 @@ $$
 I(V, W) := -\int_0^T \langle V, W'' + R(W, \gamma')\gamma' \rangle dt \quad
 $$
 
-is degenerate if $W$ Jacobi field. $(V, W \text{ always proper})$
+is degenerate if $W$ Jacobi field. (Here $V, W$ are always proper.)
 
-### Theorem 1
+#### Theorem 1
 
 Every Jacobi field $V$ along geodesic $\gamma$ is the variation field of a geodesic variation of $\gamma$.
 
@@ -112,12 +116,14 @@ Then $J = V$ by the following lemma.
 <div style="text-align: right"> $\square$ </div>
 
 
-### Lemma 1
+#### Lemma 1
 
-$\forall \xi, \eta \in T_{\gamma(0)}M \quad \exists! J :[0,T]\to TM$ such that 
+For all $\xi, \eta \in T_{\gamma(0)}M$ there exists a unique $J :[0,T]\to TM$ such that 
 
 $$
-\begin{cases} J'' + R(J, \gamma')\gamma' = 0 \\ J(0) = \xi, \frac{D}{dt}J(0) = \eta \end{cases}
+\begin{cases} 
+J'' + R(J, \gamma')\gamma' = 0 \\ J(0) = \xi,\\ \frac{D}{dt}J(0) = \eta 
+\end{cases}
 $$
 
 #### Proof sketch
@@ -125,19 +131,22 @@ $$
 Choose parallel orthonormal frame along $\gamma$, so that 
 $J(t) = J^k(t) E_k.$ 
 
+The system
+
 $$
-\Rightarrow \begin{cases} \dot{J}^i =: V^i \\ \dot{V}^i = -R_{jkl}^i J^j \gamma'^k \gamma'^l \end{cases}
+\begin{cases} \dot{J}^i =: V^i \\ \dot{V}^i = -R_{jkl}^i J^j \gamma'^k \gamma'^l \end{cases}
 $$
 
-has a unique solution by Picard-Lindelöf Theorem. $\square$
+has a unique solution by Picard-Lindelöf Theorem. 
+<div style="text-align: right"> $\square$ </div>
 
-## Consequences:
+---
+## Consequences
 The space of vector fields along $\gamma$ satisfies the isomorphism $\Gamma(T\gamma) \simeq T_{\gamma(0)}M \oplus T_{\gamma(0)}M$ so $\dim\Gamma(T\gamma) = 2n$.
 
-Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations,
+Meanwhile $\Gamma(s,t) = \gamma(s+t)$, $\Gamma(s,t) = \gamma(e^s t)$ are just reparametrizations of the geodesic $\gamma$.
 
-So the interesting Jacobi fields are $2n-2$ many.
-
+So the "interesting" Jacobi fields are $2n-2$ many. 
 These are precisely the normal Jacobi fields.
 
 Recall $I(V, V) = -\int_0^T \langle V, V'' + R(V, \gamma')\gamma' \rangle dt = \left.\frac{d^2}{ds^2}E(\Gamma_s)\right|_{s=0}$, where
@@ -149,15 +158,15 @@ Since $E(\Gamma_\bullet): (-\varepsilon, \varepsilon) \to \mathbb{R}$ is a funct
 
 The normal Jacobi fields with vanishing ends are precisely those satisfying $I(V, V) = 0$. They are $n-1$ many.
 
-### Proposition 1 (normal and tangential Jacobi fields)
+#### Proposition 1 (normal and tangential Jacobi fields)
 
-A Jacobi field $J(t)$ remains tangential/normal:
+A Jacobi field $J(t)$ remains tangential/normal. Namely, for $t \in [0, T],$ we have the equivalences:
 
 i) $J(t) = \lambda t \gamma'(t) \Leftrightarrow J(0) = 0, J'(0) = \lambda \gamma'(0)$
 
 Also in this case $J'' = 0.$
    
-ii) $J(0), J'(0) \perp \gamma'(0) \Leftrightarrow J(t) \perp \gamma'(t) \forall t \in [0, T]$.
+ii) $J(t) \perp \gamma'(t)$. \Leftrightarrow $J(0), J'(0) \perp \gamma'(0)$
 
 #### Proof
 
@@ -173,7 +182,7 @@ $$
 Since $J'' = -R(J, \gamma')\gamma'$, we have $\langle J, \gamma'\rangle'' = -\langle R(J, \gamma')\gamma', \gamma' \rangle = 0$ by the properties of the Riemann curvature. Using the assumption $J(0) \perp \gamma'(0)$ and $J'(0) \perp \gamma'(0)$ we conclude
 
 $$
-\Rightarrow \begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}
+\begin{cases} \langle J(t), \gamma'(t)\rangle = at + b \\ \langle J'(t), \gamma'(t)\rangle = a \end{cases} \Rightarrow \begin{matrix} b = 0 \\ a = 0 \end{matrix}
 $$
 <!-- $\square$ -->
 <div style="text-align: right"> $\square$ </div>

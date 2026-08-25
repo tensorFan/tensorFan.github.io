@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: papers
+title: Papers
 description: by year
 
 #edit and put back @s in _bibliography/papers.bib to see einstein entries

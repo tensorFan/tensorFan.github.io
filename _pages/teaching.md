@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
-description: a list of courses I have helped teach. If I happen to create some material for a course, you will find it here.
+title: Teaching
+description: Here you can find a list of courses I have helped teach. If I happen to create some material for a course, you will find it here also. 
 nav: true
 ---
 

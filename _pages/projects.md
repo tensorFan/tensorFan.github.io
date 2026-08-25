@@ -1,18 +1,19 @@
 ---
 layout: page
-title: research activities
+title: Research activities
 permalink: /projects/
-description: here you can see some of my project descriptions, attended conferences and other miscellaneous stuff
+description: Here you can view some of my project descriptions, attended conferences and other miscellaneous stuff
 nav: true
 #display_categories: [work, fun]
 horizontal: false
 ---
 
-## attended conferences
-- 4th International Conference on Numerical Methods in Multiphase Flows [(ICNMMF-4)](https://sites.psu.edu/icnmmf4/), September 28-30, 2022, Venice. Gave a 15 minute talk [(slides)](/assets/pdf/Presentation 2022 - CutFEM Darcy in Venice.pdf)
-- ENUMATH 2023 [(ENUMATH)](https://enumath2023.com/), September 4-8, 2023, Lisbon. Gave a 20 minute talk.
+## Talks
+- ``Saving the divergence condition in CutFEM (with respect to the Darcy interface problem)'', 4th International Conference on Numerical Methods in Multiphase Flows [(ICNMMF-4)](https://sites.psu.edu/icnmmf4/), September 28-30 2022, Venice, 15 minutes [(slides)](/assets/pdf/Presentation 2022 - CutFEM Darcy in Venice.pdf)
+- ``Divergence preserving cut finite element methods for Stokes flow'', ENUMATH 2023 [(ENUMATH)](https://enumath2023.com/), September 4-8 2023, Lisbon, 20 minutes
+- ``Exterior calculus for (cut) finite element methods'', KTH Numerical Analysis Seminar [(KTH NA Sem)](https://www.kth.se/math/kalender/semna), April 24 2025, Stockholm, 45 minutes 
 
-## project descriptions
+## Project descriptions
 
 - Conservative cut finite element methods [PhD Project]
 , with S. Zahedi and T. Frachon
@@ -31,7 +32,7 @@ The cut finite element method (CutFEM) is a numerical method for meshes unfitted
 In [this work](https://arxiv.org/abs/2404.12823) we propose nodal auxiliary space preconditioners for facet and edge virtual elements of lowest order, for applications to PDEs approximated using the virtual element method (VEM). Under assumed regularity of the mesh, the preconditioned system is proven to have bounded spectral condition number independent of the mesh size and this is verified by numerical experiments on a sequence of polygonal meshes. Moreover, we observe numerically that the preconditioner is robust on meshes containing elements with high aspect ratios.
 
 
-- Can one hear the shape of a flat torus? [~2021]
+- Can one hear the shape of a flat torus?
 , with J. Rowlett and F. Rydell
 
 Flat tori are particularly simple Riemannian manifolds for which it is in some dimensions possible to discern their isometry class (shape) from simply looking at the list of numbers we call the Laplace eigenvalue spectrum. In which dimensions can we do this? The answer is written in the language of quadratic forms (and also only German - up until [now](https://tensorfan.github.io/publications/)!)

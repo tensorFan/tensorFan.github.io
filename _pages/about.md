@@ -8,9 +8,8 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
-    <p>Room 3738</p>
-    <p>Lindstedtsvägen 25 KTH</p>
-    <p>Stockholm</p>
+    <p>University of Montpellier</p>
+    <p>France</p>
 
 news: false  # includes a list of news items 
 selected_papers: false # includes a list of papers marked as "selected={true}"
@@ -27,7 +26,10 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 # Welcome to Erik Nilsson's homepage!
 
-I am a PhD student in Numerical Analysis at [KTH](https://www.kth.se/profile/erikni6). My supervisor is [Sara Zahedi](https://www.kth.se/profile/sara7). On this site you can view my research and find other links.
+<!-- I am a PhD student in Numerical Analysis at [KTH](https://www.kth.se/profile/erikni6). My supervisor is [Sara Zahedi](https://www.kth.se/profile/sara7).  -->
+I am a Postdoc in the [NEMESIS](https://erc-nemesis.eu/pis-and-research-team/) project at the University of Montpellier.
+Previously I was a PhD student at [KTH](https://www.kth.se/profile/erikni6), Sweden.
+On this site you can view my research and find other links.
 I will also make the occasional post about to me interesting mathematics.
 
 <!--
