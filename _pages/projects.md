@@ -13,6 +13,9 @@ horizontal: false
 - ``Divergence preserving cut finite element methods for Stokes flow'', ENUMATH 2023 [(ENUMATH)](https://enumath2023.com/), September 4-8 2023, Lisbon, 20 minutes
 - ``Exterior calculus for (cut) finite element methods'', KTH Numerical Analysis Seminar [(KTH NA Sem)](https://www.kth.se/math/kalender/semna), April 24 2025, Stockholm, 45 minutes 
 
+## Administrative activities
+- Helped organise the workshop ['Towards polytopal meshes in GMSH'](https://erc-nemesis.eu/gmsh/) and designed and built its website.
+
 ## Project descriptions
 
 - Conservative cut finite element methods [PhD Project]
